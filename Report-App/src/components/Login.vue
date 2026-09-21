@@ -1,0 +1,72 @@
+<template>
+    <html lang="es">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    <div class="Formulario">
+        <h1>Iniciar Sesión</h1>
+        <form @submit.prevent="handleLogin" class="formulario">
+        <div class="form-group">
+            <label for="username">Usuario o correo electrónico:</label>
+            <input type="text" id="username" v-model="username" required placeholder="Escribir..." />
+        </div>
+        <div class="form-group">    
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" v-model="password" required placeholder="Escribir contraseña..."/>
+        </div>
+        </form>
+          <button type="button" class="btn btn-light">Light</button>
+          <p>¿No tienes una cuenta? <a href="/register">Regístrate aquí</a></p>
+    </div>
+    </body>
+    </html>
+</template>
+
+<style scoped>
+html{
+    background-color: #0C1132;
+    color: white;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+div.Formulario {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+::placeholder {
+    font-size: 14px;
+}
+p {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+}
+</style>
