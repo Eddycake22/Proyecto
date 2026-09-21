@@ -1,3 +1,4 @@
+@import url('https://googleapis.com');
 
 * {
     margin: 0;
@@ -8,6 +9,7 @@ html {
     /*background-color: #0C1132;*/
 }
 body {
+    font-family: 'League Spartan', sans-serif;
     width: 100dvw;
     min-height: 100dvh;
     margin: 0;

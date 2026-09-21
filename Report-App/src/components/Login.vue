@@ -1,11 +1,8 @@
 <template>
     <html lang="es">
     <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body class="text-light">
     <div class="Formulario">
         <h1>Iniciar Sesión</h1>
         <form @submit.prevent="handleLogin" class="formulario">
@@ -18,8 +15,8 @@
             <input type="password" id="password" v-model="password" required placeholder="Escribir contraseña..."/>
         </div>
         </form>
-          <button type="button" class="btn btn-light">Light</button>
-          <p>¿No tienes una cuenta? <a href="/register">Regístrate aquí</a></p>
+          <button type="button" class="btn btn-light">Iniciar Sesión</button>
+          <p>¿No tienes cuenta? <a href="/register">Regístrate aquí</a></p>
     </div>
     </body>
     </html>
@@ -27,24 +24,21 @@
 
 <style scoped>
 html{
-    background-color: #0C1132;
-    color: white;
+    /*background-color: #0C1132;*/
 }
-
-body {
+body {  
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 20px;
+    background-color: #0C1132!important;
 }
 
 div.Formulario {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 h1 {
     text-align: center;
@@ -60,6 +54,7 @@ input {
     border: none;
     border-radius: 4px;
     margin-top: 8px;
+    font-size: 14px;
 }
 ::placeholder {
     font-size: 14px;
@@ -69,4 +64,5 @@ p {
     margin-top: 5px;
     font-size: 14px;
 }
+
 </style>
