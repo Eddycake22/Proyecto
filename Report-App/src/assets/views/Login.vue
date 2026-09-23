@@ -1,3 +1,6 @@
+<script setup>
+</script>
+
 <template>
     <html lang="es">
     <head>
@@ -16,7 +19,7 @@
         </div>
         </form>
           <button type="button" class="btn btn-light">Iniciar Sesión</button>
-          <p>¿No tienes cuenta? <a href="/register">Regístrate aquí</a></p>
+          <p>¿No tienes cuenta? <a href="/register" @click="goToRegister">Regístrate aquí</a></p>
     </div>
     </body>
     </html>
@@ -36,6 +39,8 @@ body {
 
 div.Formulario {
     display: flex;
+    width: 450px;
+    padding:40px;
     flex-direction: column;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -64,5 +69,6 @@ p {
     margin-top: 5px;
     font-size: 14px;
 }
+
 
 </style>
