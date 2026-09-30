@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import  Home from './views/Home.vue'
 
 import './assets/main.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-createApp(App).use(router).mount('#app')
+createApp(Home).mount('#app')
 
