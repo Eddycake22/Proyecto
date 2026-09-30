@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div id="barra">
         <div class="circle">
         </div>
         <img src="" alt="">
@@ -14,8 +14,13 @@
 </template>
 
 <style>
-.container {
-    margin: auto 0%;
+#barra {
+    margin:0%!important;
+    width: 275px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #0C1132;
 }
 .circle {
