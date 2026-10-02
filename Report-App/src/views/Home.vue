@@ -1,7 +1,6 @@
 <template>
   <body>
     <Barra_Lateral />
-
     <div class="container">
     <Report_Button />
     <h1 class="fw-semibold">Reportes</h1>
@@ -15,8 +14,8 @@
         <h3>Completadas</h3>
         <Task_Target />    
         <hr class="mb-5">
-        
       </section>
+      <Report_form />
     </div>
   </body>
 </template>
@@ -42,7 +41,7 @@ hr {
 </style>
 
 <script setup>
-import Target_historial from "../components/Target_historial.vue";
+import Report_form from "../components/Report_form.vue";
 import Barra_Lateral from "../components/Barra_Lateral.vue";
 import Report_Button from "../components/Report_Button.vue";
 import Task_Target from "../components/Task_Target.vue";

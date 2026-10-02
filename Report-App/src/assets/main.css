@@ -9,10 +9,17 @@ html {
     /*background-color: #0C1132;*/
 }
 body {
-    font-family: 'League Spartan', sans-serif!important;
     width: 100dvw;
     min-height: 100dvh;
     margin: 70px 0px 0px 0px!important;
     padding: 0;
      background-color: #EFF0F8!important;;
+}
+
+h1, h2, h3 {
+    font-family: 'League Spartan', sans-serif!important;
+}   
+
+p, h4, div, label, input, select, textarea, button {
+    font-family: 'Roboto', sans-serif!important;
 }
