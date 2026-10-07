@@ -1,14 +1,21 @@
+<script>
+  import Search from './Search.vue'
+</script>
+
 <template>
 <nav class="navbar navbar-dark bg-dark fixed-top" style="background-color: #0C1132!important;">
   <div class="container-fluid">
+    
     <!--<a class="navbar-brand" href="#">Offcanvas dark navbar</a>-->
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasLabel"></h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <Search/>
       </div>
       <div class="offcanvas-body">
         <div class="User-info d-flex flex-column align-items-center">
@@ -61,6 +68,7 @@
 #offcanvas {
     background-color: #0C1132!important;
 }
+
 .circle {
     display: flex;
     justify-content: center;
