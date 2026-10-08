@@ -1,43 +1,64 @@
 <template>
   <body>
     <Barra_Lateral />
-    <div class="grid" id="cuerpo" style="--bs-columns:3; --bs-rows: 3">
+
+    <div class="grid" style="--bs-columns:3; --bs-row:3; --bs-md-row:4; column-gap:1rem;">
     <!--<Search />-->
-    <h1 class="fw-semibold g-col-4" id="titulo">Asignaciones</h1>
-    <Report_Button />
-    <Order_button/>
-      <section id="Tareas">
-         <hr class="mb-5">
-        <Task_Target />    
-      </section>
-      <Report_form/>
+      
+      <h1 class="d-flex align-items-center fw-semibold" id="titulo">Asignaciones</h1>
+      <Order_button class="d-flex"/>
+      <Report_Button class="d-flex justify-content-center align-items-center"/>
+       <hr class="divisor" style="grid-row:2; grid-column:span 3;">
+      <section class="" id="Tareas" style="grid-row:3; grid-column:span 3;">
+        <Task_Target/>    
+      </section> 
+      <!-- <Report_form/>-->
     </div>
   </body>
 </template>
 
 <style>
 
-#cuerpo{
+.grid{
+  min-width: 70%;
+  grid-template-columns: 1fr auto auto;
   display: grid;
-  width: 850px;
+  grid-auto-rows: min-content;
   background-color: white;
-  margin: 0px 300px;
+  margin: 0px 250px;
+  padding: 25px ;
+  border-radius:15px ;
 }
-/* 
-div.select {
-  display: inline-block!important;
-} */
 h1, h3{
     color: #0C1132;
-    margin: 20px 0px!important;
+    margin: 0px!important;
 }
-#titulo {
-  display: inline-block!important;
+h1 {
+  display: inline-block;
+  vertical-align: middle;
+}
+.divisor {
+  margin: 20px 0px 20px 0px;
+  width: 100%;
+  color: #0C1132!important;  
 }
 
-hr {
-    border: 5px solid;
-    color: #0C1132!important;  
+
+@media (max-width: 768px) {
+    .mb-5{
+      margin-bottom: 0px!important;
+      border-radius: 5px;
+    }
+    select {
+    grid-area: 2 / span 3;
+    }
+    h1{
+      color: red!important;
+    }
+    /* grid-row-start: 2;
+    grid-column-start: span 3;
+    grid-row-end: auto;
+    grid-column-end: auto; */
 }
 /*
 #titulo {
@@ -51,12 +72,7 @@ hr {
   vertical-align: center;
   vertical-align: middle!important;
 }
-.btn.btn-dark {
-  display: inline-block;
-  vertical-align: baseline;
-}
   */
-
 </style>
 
 <script setup>

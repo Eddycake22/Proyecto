@@ -10,10 +10,6 @@
         border-radius: 15px;
         font-size: 25px;
         background-color: #0C1132;
-        vertical-align: baseline;
-        position: relative;
-        left: 70%;
-        display: inline-block;
     }
 
     .btn.btn-dark:hover {

@@ -21,9 +21,10 @@ select {
 }
 
 select {
+  max-width: 150px auto;
+  height: 45px;
   display: flex;
   justify-content: space-between;
-  max-width: 150px;
   align-items: center;
   color: white;
   padding-block: 10px;
