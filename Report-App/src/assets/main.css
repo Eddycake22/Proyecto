@@ -15,11 +15,12 @@ body {
     padding: 0;
      background-color: #EFF0F8!important;
      display: flex;
-     justify-content: center;
+     justify-content: center;     
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: 'League Spartan', sans-serif!important;
+    color: #0C1132;
 }   
 
 p, h4, div, label, input, select, textarea, button {
@@ -27,12 +28,5 @@ p, h4, div, label, input, select, textarea, button {
 }
 
 @media (max-width: 768px) {
-    .grid {
-        margin: 0px 50px;
-        /* grid-template-columns: repeat(auto, minmax(250px, 1fr)); */
-        grid-template-rows: repeat(auto);
-    }
-    #titulo {
-        grid-column: span 3;
-    }
+    
 }

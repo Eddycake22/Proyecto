@@ -1,9 +1,9 @@
 <template>
-    <div class="act-task grid" style="--bs-rows:3; --bs-columns:3; column-gap:1rem;">
+    <div class="act-task grid shadow-sm" style="--bs-rows:3; --bs-columns:3; column-gap:1rem;">
         <h4 class="mt-1" id="report-name">Nombre de la asignación</h4>
         <p id="status" style="grid-row:2">Estado: </p>
         <p class="d-flex align-items-center " id="Desc" style="grid-row:3;">Descripcion:</p>
-        <button class="btn btn-secondary" style="grid-row:3; grid-column:2;" type="button" id="edit-btn">Detalles</button>
+        <button class="btn btn-secondary" style="grid-row:3; grid-column:2;" type="button" id="details-btn">Detalles</button>
         <button class="btn btn-primary" style="grid-row:3; grid-column:3;" type="button" id="complete-btn">Completar</button>
     </div>
 </template>
@@ -11,11 +11,12 @@
 <style scoped>
 .act-task {
     display: grid;
-    max-width: 100%;
+    min-width: 100%;
     grid-template-columns: 1fr auto auto;
-    /*background-color: white;*/
-    background-color: rgb(243, 196, 43);
-    border-radius: 15px;
+    grid-auto-rows: min-content;
+    background-color: white;
+    /* background-color: rgb(243, 196, 43); */
+    border-radius: px;
     margin: 0px;
     padding: 20px;
 }
@@ -24,17 +25,7 @@ p {
     font-size: 16px;
     margin: 0px;
 }
-/*
-button {
 
-    width: 100px;
-    border: none;
-    font-size: 14px;
-    justify-content: right;
-    margin-right: 10px;
-}
-
-*/
 #complete-btn {
     background-color: #0C1132;
     border: none;
@@ -49,20 +40,32 @@ button {
     .act-task {
         max-width: 60%;
         grid-template-rows: repeat(4, 1fr);
-        grid-template-columns: repeat(4, auto)!important;
+        grid-template-columns: 2fr 1fr 1fr!important;
         grid-auto-rows: 150px;
     }
 
     h4 {
         font-size: 14px;
-        grid-column: span 3;
+        grid-column: span 4;
     }
     p {
         font-size: 13px;
+        grid-column: span 4;
     }
     .btn {
-        grid-column: span 1.5;
-        grid-row:4;
+        font-size: 13px;
+        grid-row-start:4!important;
+        padding: 5px 5px;
+    width: auto;
+    height: 40px; 
+    }
+    #complete-btn {
+        grid-column-start: 4!important;
+    }
+    #details-btn {
+        grid-column-start: 2!important;
+        position: relative;
+        left: 10px;
     }
 }
 </style>

@@ -14,6 +14,7 @@ function mostrarVistaPrevia(event: Event) {
     vistaPrevia.value = URL.createObjectURL(archivo)
   }
 }
+
 </script>
 
 <template>
