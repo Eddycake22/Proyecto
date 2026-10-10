@@ -35,9 +35,10 @@ const guardarform = () => {
     Crear Reporte
   </button>
 
-  <div v-if="mostrarFormulario" class="form-container modal-form">
+  <div v-if="mostrarFormulario" class="overlay" @click.self="mostrarFormulario = false">
+    <div class="form-container modal-form" style="--bs-rows:6;">
     <div class="form-hearder">
-      <h3 class="mt-2">Hacer Reporte</h3>
+      <h3 class="mb-2">Hacer Reporte</h3>
     </div>
 
     <form class="row g-3" form @submit.prevent="guardarform">
@@ -105,11 +106,14 @@ const guardarform = () => {
         ></textarea>
       </div>
 
-      <div class="col-md-2 position relative" id="image-upload">
-        <img v-if="vistaPrevia" :src="vistaPrevia" alt="Vista previa" />
-        <label for="imagen-input" class="botones btn-image" id="imagen-label"
-          >Subir Imagen</label
-        >
+      <div class="col-12 col-md-6">
+        <div class="overflow-hidden" id="image-upload"> <!-- id="image-upload" -->
+        
+        <label for="imagen-input" class="botones btn-image" id="image-label"
+          >
+        <img v-if="vistaPrevia" class="mb-2" :src="vistaPrevia" alt="Vista previa" />
+          Subir Imagen
+      </label> <!-- id="imagen-label" -->
         <input
           type="file"
           id="imagen-input"
@@ -119,27 +123,56 @@ const guardarform = () => {
           @change="mostrarVistaPrevia"
         />
       </div>
-
+      </div>
+      <div class="col-12 col-md-6 d-flex justify-content-end">
       <button
         type="submit"
-        class="botones btn btn-primary col-2 position-relative"
+        class="botones btn btn-primary"
         id="submit-button"
       >
         Enviar
       </button>
+
       <button
         type="button"
-        class="botones btn btn-secondary col-2 position-relative"
+        class="botones btn btn-secondary"
         id="cancel-button"
         @click="mostrarFormulario = false"
       >
         Cancelar
       </button>
+      </div>
+
+      <!-- <div class="col-3 d-flex justify-content-end">
+        
+      <button
+        type="button"
+        class="botones btn btn-secondary"
+        id="cancel-button"
+        @click="mostrarFormulario = false"
+      >
+        Cancelar
+      </button>
+      </div> -->
     </form>
+  </div>
   </div>
 </template>
 
 <style scoped>
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Asegura que esté por encima de todo */
+}
+
 #open-form {
   width: auto!important;
   padding: 5px 10px;
@@ -154,12 +187,14 @@ const guardarform = () => {
 }
 
 .form-container {
+  display: grid;
   width: 80%;
   height: Auto;
   margin: 0px 150px 0px 150px;
   background-color: white;
   padding: 20px 35px;
   border-radius: 15px;
+  /* grid-template-columns: 1fr auto auto!important; */
 }
 
 input,
@@ -168,33 +203,46 @@ textarea {
   background-color: #eff0f8;
 }
 
-#image-upload {
+#image-label {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /*Diseño del botón*/
+  
+  /* margin: 0px 7px; */
   background-color: #0c1132;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+   
 }
-
-#image-upload:hover,
+/* 
+#image-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0c1132;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+   
+} */
+#image-label:hover,
 #submit-button:hover {
   background-color: #171f52;
 }
 #submit-button, #cancel-button {
-  left: 59.5%;
-  top: 15px;
+  /* left: 59.5%;
+  top: 15px; */
   width: 100px;
   height: 40px;
   border: none;
 }
 #submit-button {
   background-color: #0c1132;
-  margin-right: 25px;
+  margin-right: 14px;
+ 
 }
 
 img {
@@ -203,7 +251,63 @@ img {
   object-fit: cover;
 }
 
-.botones {
-  justify-content: bottom;
+select {
+  appearance: none;
+  @supports (appearance: base-select) {
+    &,
+    &::picker(select) {
+      appearance: base-select;
+    }
+  }
 }
+
+select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(33, 37, 41, 0.75);
+  /* padding-block: 10px;
+  padding-inline: 10px 30px;
+  border-radius: 10px; */
+  cursor: pointer;
+  background:  #EFF0F8
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%230c1132' class='size-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E%0A")
+    right 10px center / 20px no-repeat / color black;
+    @supports (appearance: base-select) {
+    padding-inline: 10px;
+    background-image: none;
+    &::picker-icon {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%230c1132' class='size-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E%0A");
+      transition: rotate 0.2s ease-out;
+    }
+    &:open::picker-icon {
+      rotate: 180deg;
+    }
+  }
+}
+/* .botones {
+  justify-content: bottom;
+} */
+
+@media (max-width: 768px) {
+  .form-container {
+  width: 90%;
+  margin: 0px 40px 0px 40px;
+  background-color: white;
+  padding: 20px 35px;
+  /* grid-template-columns: 1fr auto auto!important; */
+}
+        button {
+            height: 35px;
+            width: 40px;
+            font-size: 14px;
+            border-radius: 10px;
+            margin-top:5px ;
+        }
+
+    }
+    
 </style>
