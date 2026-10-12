@@ -70,6 +70,7 @@ h1 {
   .select {
     /* grid-area: 3 / span 4; */
     grid-row-start: 3;
+    grid-column-start:2 ;
   }
   h1 {
     vertical-align: baseline;

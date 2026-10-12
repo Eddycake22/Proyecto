@@ -34,7 +34,9 @@ p {
 .btn.btn-primary:hover {
         background-color: #171f52!important;
     }
-
+.btn {
+    border-radius: 10px;
+}
 
 @media (max-width: 768px) {
     .act-task {
@@ -53,10 +55,10 @@ p {
         grid-column: span 4;
     }
     .btn {
-        font-size: 13px;
+        font-size: 14px;
         grid-row-start:4!important;
         padding: 5px 5px;
-    width: auto;
+    width: 100px;
     height: 40px; 
     }
     #complete-btn {
