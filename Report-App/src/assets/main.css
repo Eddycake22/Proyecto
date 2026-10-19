@@ -13,14 +13,19 @@ body {
     min-height: 100dvh;
     margin: 40px 0px 0px 0px!important;
     padding: 0;
-     background-color: #EFF0F8!important;
+     /* background-color: #EFF0F8!important; */
      display: flex;
-     justify-content: center;     
+     flex-direction: column;     
+    background-image: url('../assets/Images\Background.svg'); /* Ruta local o URL de internet */
+    background-repeat: no-repeat;       /* Evita que la imagen se repita */
+    background-position: center;        /* Centra la imagen en la pantalla */
+    background-size: cover;             /* Hace que la imagen cubra todo el fondo */
+    background-attachment: fixed;       /* Mantiene la imagen fija al hacer scroll */
 }
 
 h1, h2, h3, h4 {
     font-family: 'League Spartan', sans-serif!important;
-    color: #0C1132;
+    color: /* #0C1132 */#EFF0F8;
 }   
 
 p, h4, div, label, input, select, textarea, button {

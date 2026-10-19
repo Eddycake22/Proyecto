@@ -91,7 +91,7 @@ const task = ref ({
               <img v-if="vistaPrevia" class="mb-2" :src="vistaPrevia" alt="Vista previa" />
               Subir Imagen
             </label> <!-- id="imagen-label" -->
-            <input type="file" id="imagen-input" v-model="task.image" accept="image/*" style="display: none"
+            <input type="file" id="imagen-input" accept="image/*" style="display: none"
               @change="mostrarVistaPrevia" />
           </div>
         </div>
@@ -142,12 +142,34 @@ const task = ref ({
   padding: 5px 10px;
   border-radius: 11px;
   font-size: 15px;
-  background-color: #0c1132;
-  border: 2px solid #333d81;
+  /* background-color: rgba(239, 240, 248, 0.25); */
+  border: none;
+  box-shadow: inset 0 1px 1.5px #ccc, 
+  inset 0 -1px 1px #aaa;
+  /* box-shadow:
+    inset 1px 1px 5px rgba(255, 255, 255, 0.2), 
+    inset 1px 1px 5px rgba(0, 0, 0, 0.1),
+    2px 2px 10px rgba(0, 0, 0, 0.4),
+    -2px -2px 8px rgba(255, 255, 255, 0.1); */
+  user-select: none;
+    background: radial-gradient(
+     at 50% 50%,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(239, 240, 248, 0.1) 75%
+  ) ;
+  transition-property: all;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 
-.btn.btn-dark:hover {
-  background-color: #171f52!important;
+#open-form:hover {
+  background: radial-gradient(
+     at 50% 50%,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(239, 240, 248, 0.3) 250%,
+    rgba(239, 240, 248, 0.3) 50%
+  );
+  /* transform: scale(1.01); */
 }
 
 .form-container {
