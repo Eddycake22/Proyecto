@@ -4,6 +4,7 @@
         <h1 class="fw-semibold" id="titulo"> <!-- align-items-center -->
         Asignaciones
       </h1>
+      <i class="bi bi-arrow-right-short"></i>
     </div>
 </template>
 

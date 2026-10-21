@@ -1,25 +1,15 @@
 <template>
-  <body>
-    <Barra_Lateral />
-    <Navegacion/>
     <div class="grid" style="--bs-columns: 4; --bs-row: 4">
-      <!--<Search />-->
       <Order_button class="d-flex" /> <Prueba_form/>
       <Report_Button class="d-flex justify-content-center align-items-center" />
-      <!-- <hr class="divisor" style="grid-row: 2; grid-column: span 3" /> -->
       <section class="" id="Tareas" style="grid-row: 3; grid-column: span 3">
         <Task_Target />
       </section>
-     <!--  <hr class="divisor" style="grid-column: span 3" /> -->
-      <!-- <Report_form/>-->
-      <section id="areas">
-        <Areas_target />
-      </section>
     </div>
-  </body>
 </template>
 
-<style>
+<style scoped>
+
 .grid {
   min-width: 70%;
   grid-template-columns: 1fr auto auto;
@@ -56,9 +46,6 @@ h1 {
     /*grid-template-columns: repeat(auto, minmax(250px, 1fr)); 
         grid-template-rows: repeat(auto);*/
   }
-  #titulo {
-    /* grid-column: span 1; */
-  }
   .mb-5 {
     margin-bottom: 0px !important;
     border-radius: 5px;
@@ -81,15 +68,10 @@ h1 {
   }
 }
 </style>
-
 <script setup>
-import Report_form from "../components/Report_form.vue";
-import Barra_Lateral from "../components/Barra_Lateral.vue";
-import Navegacion from "../components/Navegacion.vue";
-/* import Report_Button from "../components/Report_Button.vue"; */
+
 import Prueba_form from "../components/Prueba_form.vue";
 import Task_Target from "../components/Task_Target.vue";
 import Order_button from "../components/Order_button.vue";
-import Report_details from "../components/Report_details.vue";
-import Areas_target from "../components/Areas_target.vue";
+
 </script>
