@@ -1,6 +1,6 @@
 <template>
     <div class="grid" style="--bs-columns: 4; --bs-row: 4">
-      <Order_button class="d-flex" /> <Prueba_form/>
+      <Order_button class="d-flex" /> <create_report/>
       <Report_Button class="d-flex justify-content-center align-items-center" />
       <section class="" id="Tareas" style="grid-row: 3; grid-column: span 3">
         <Task_Target />
@@ -9,7 +9,6 @@
 </template>
 
 <style scoped>
-
 .grid {
   min-width: 70%;
   grid-template-columns: 1fr auto auto;
@@ -70,7 +69,7 @@ h1 {
 </style>
 <script setup>
 
-import Prueba_form from "../components/Prueba_form.vue";
+import create_report from "../components/create_report.vue";
 import Task_Target from "../components/Task_Target.vue";
 import Order_button from "../components/Order_button.vue";
 
