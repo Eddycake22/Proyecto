@@ -1,6 +1,6 @@
 <template>
   <div class="select fw-medium">
-    <select name="Order-task" id="Order-task">
+    <select name="Order-task position-area id="Order-task">
       <option id="ordenar" value="#">Ordenar por</option>
       <option value="1">Completadas</option>
       <option value="2">Pendientes</option>
@@ -58,18 +58,8 @@ select {
       margin-top: 5px;
       border: none;
       background: rgba(24, 34, 112, 0.9);
-      /* color: #0C1132; */
       color: #eff0f8;
       border-radius: 5px;
-      /* font-weight: 400; */
-
-      /* opacity: 0;
-      height: 0;
-      overflow: clip;
-      transition: height 0.2s ease-out, opacity 0.2s ease-out, overlay 0.2s,
-        display 0.2s;
-
-      transition-behavior: allow-discrete; */
     }
 
     &:open::picker(select) {

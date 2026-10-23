@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
         <nav>
             <ul>
@@ -84,4 +84,56 @@ nav ul li:hover::after {
 li:hover{
     color:white;
 }
+</style> -->
+<template>
+    <nav class="navbar">
+        <div class="navbar-container"><a href="" class="navbar-logo">CCSnippets</a>
+        <buttom class="navbar-toggle">
+            <span-bar></span-bar>
+            <span-bar></span-bar>
+            <span-bar></span-bar>
+        </buttom>
+        <ul class="navbar-manu">
+            <li><a href="">Áreas</a></li>
+            <li><a href="">Asignaciones</a></li>
+            <li><a href="">Estadísticas</a></li>
+        </ul>
+        </div>
+    </nav>
+</template>
+
+<style>
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: transparent;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
+        backdrop-filter: blur(10px);
+        z-index: 999;
+    }
+    .navbar-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width:100%;
+        padding: 0 2rem;
+        max-width: 1600px;
+    }
+    .navbar-logo{
+        font-size: 2rem;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .navbar-container .navbar-menu{
+         display: flex;
+         text-align: center;
+         gap: 1.5rem;
+    }
 </style>
