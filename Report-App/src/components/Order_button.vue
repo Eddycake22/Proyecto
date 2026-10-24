@@ -1,6 +1,6 @@
 <template>
   <div class="select fw-medium">
-    <select name="Order-task position-area id="Order-task">
+    <select name="Order-task position-area">
       <option id="ordenar" value="#">Ordenar por</option>
       <option value="1">Completadas</option>
       <option value="2">Pendientes</option>

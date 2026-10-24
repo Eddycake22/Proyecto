@@ -138,7 +138,7 @@ const task = ref ({
 }
 
 #open-form {
-  width: auto !important;
+  width: 20%;
   padding: 5px 10px;
   border-radius: 11px;
   font-size: 15px;
@@ -351,14 +351,18 @@ select {
     padding: 20px 35px;
     /* grid-template-columns: 1fr auto auto!important; */
   }
-
-  button {
+  #open-form{
+    font-size: 14px;
+    height: 45px;
+    width: 120px;
+  }
+  /* button {
     height: 35px;
     width: 40px;
     font-size: 14px;
     border-radius: 10px;
     margin-top: 5px;
-  }
+  } */
 
 }
 </style>

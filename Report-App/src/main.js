@@ -9,5 +9,5 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 
 /* .$ axios = axios ; */
 
-createApp(Principal_view).mount('#app')
+createApp(Principal_view).mount('#app');
 

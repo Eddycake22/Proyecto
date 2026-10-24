@@ -1,7 +1,6 @@
 <template>
     <div class="grid" style="--bs-columns: 4; --bs-row: 4">
-      <Order_button class="d-flex" /> <create_report/>
-      <Report_Button class="d-flex justify-content-center align-items-center" />
+       <create_report/><Order_button class="d-flex" />
       <section class="" id="Tareas" style="grid-row: 3; grid-column: span 3">
         <Task_Target />
       </section>
@@ -10,16 +9,17 @@
 
 <style scoped>
 .grid {
-  min-width: 70%;
+  width: 80vw;
   grid-template-columns: 1fr auto auto;
   display: grid;
   grid-auto-rows: min-content;
   /* background-color: white */
-  margin: 0px 250px;
-  padding: 25px;
-  border-radius: 15px;
-  row-gap: 2rem;
+  margin: 0px;
+  /* padding: 25px;
   column-gap: 1rem;
+   */
+  row-gap: 2rem;
+  
 }
 h1,
 h3 {
@@ -39,26 +39,21 @@ h1 {
 @media (max-width: 768px) {
   .grid {
     min-width: 85%;
-    margin: 0px 25px;
     row-gap: 1rem !important;
     column-gap: 0px !important;
     /*grid-template-columns: repeat(auto, minmax(250px, 1fr)); 
         grid-template-rows: repeat(auto);*/
   }
-  .mb-5 {
-    margin-bottom: 0px !important;
-    border-radius: 5px;
-  }
   .select {
-    /* grid-area: 3 / span 4; */
-    grid-row-start: 3;
-    grid-column-start:2 ;
+    /* grid-area: 3 / span 4; 
+    grid-column-start: 2;*/
+  }
+  #open-form {
+    grid-row-start: 1;
+    grid-column-start:1;
   }
   h1 {
     vertical-align: baseline;
-  }
-  .divisor {
-    width: 100%;
   }
   #Tareas {
     grid-row-start: 4 !important;
