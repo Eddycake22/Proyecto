@@ -18,7 +18,7 @@
   /* padding: 25px;
   column-gap: 1rem;
    */
-  row-gap: 2rem;
+  row-gap: 1rem;
   
 }
 h1,

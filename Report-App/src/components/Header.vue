@@ -107,7 +107,7 @@ function activar() {
             </button>
             <ul class="navbar-menu" ref="navbarMenu">
                 <li><a href="">Áreas</a></li>
-                <li><a href="" class="">Asignaciones</a></li>
+                <li><a href="" class="active">Asignaciones</a></li>
                 <li><a href="">Estadísticas</a></li>
             </ul>
         </div>
@@ -119,19 +119,28 @@ function activar() {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    height: 60px;
     /* width: 100%; */
     position: sticky;
     top: 0;
     background: radial-gradient(
-     circle at 50% 50%,
-    rgba(0, 0, 0, 0.1) 5%,
-    rgba(239, 240, 248, 0.1) 75%
+      at 50% 50%,
+    rgba(0, 0, 0, 0.1) 45%,
+    rgba(239, 240, 248, 0.1) 90%,
+    rgba(239, 240, 248, 0.3) 120%
   ) ;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
-    backdrop-filter: blur(10px);
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0); */
+    box-shadow:/* 
+    inset 0 1px 1.5px #ccc, 
+  inset 0 -1px 1px #aaa, */
+    inset 1px 1px 5px rgba(255, 255, 255, 0.2), 
+    inset 1px 1px 5px rgba(0, 0, 0, 0.1),
+    2px 2px 10px rgba(0, 0, 0, 0.4),
+    -2px -2px 8px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1px);
     z-index: 999;
     border-radius: 25px;
+    padding: 0px 20px;
 }
 
 .navbar-container {
@@ -167,20 +176,27 @@ ul {
 }
 .navbar-container .navbar-menu li a {
     text-decoration: none;
-    color: #fff;
+    color: #EFF0F8;
     font-size: 1.3rem;
-    font-weight: 500;
-    padding: 3px 20px;
+    font-weight: 400;
+    padding: 6px 20px;
     border-radius: 20px;
-    border: 2px solid transparent;
+    /* border: 2px solid transparent; */
     transition: nowrap;
 }
 
 .navbar-container .navbar-menu li a:hover,
 .navbar-container .navbar-menu li .active {
-    color: #162530;
-    background: rgba(188, 212, 229, 0.8);
-    border: 2px solid #fff;
+    border: none;
+    background: rgba(239, 240, 248, .15);
+    box-shadow: 
+    inset 1px 1px 2px rgba(0, 0, 0, 0.1),
+    1px 1px 4px rgba(0, 0, 0, 0.4),
+    -1px -1px 4px rgba(255, 255, 255, 0.1),
+     inset 0px .2px .2px #ccc, 
+  inset 0px -.2px .2px #aaa;
+    color: #fff;
+    /* font-weight: 500; */
 }
 
 .navbar-toggle {
@@ -215,6 +231,8 @@ ul {
 @media (max-width:880px) {
     .navbar {
         backdrop-filter: none;
+        align-self: flex-end;
+        margin-right: 30px;
     }
 
     .navbar-container .navbar-menu {
@@ -225,9 +243,12 @@ ul {
         position: absolute;
         height: 100vh;
         width: 250px;
-        top: 0;
-        right: 0;
+        top: -40px;
+        right: -35px;
         padding: 5rem 1.5rem;
+        background: linear-gradient(
+            to bottom, rgba(12, 17, 50, 0.7), rgba(0, 0, 0, 0.1)
+        );
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(10px);
     }
