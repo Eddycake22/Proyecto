@@ -1,6 +1,6 @@
 <template>
     <div class="grid" style="--bs-columns: 4; --bs-row: 4">
-       <create_report/><Order_button class="d-flex" />
+       <create_report/><Order_button/>
       <section class="" id="Tareas" style="grid-row: 3; grid-column: span 3">
         <Task_Target />
       </section>
@@ -67,5 +67,4 @@ h1 {
 import create_report from "../components/create_report.vue";
 import Task_Target from "../components/Task_Target.vue";
 import Order_button from "../components/Order_button.vue";
-
 </script>

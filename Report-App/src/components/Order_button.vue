@@ -57,7 +57,8 @@ select {
       padding: 0;
       margin-top: 5px;
       border: none;
-      background: rgba(24, 34, 112, 0.9);
+      background: rgba(117, 126, 145, 0.5);
+  backdrop-filter: blur(10px);
       color: #eff0f8;
       border-radius: 5px;
     }
