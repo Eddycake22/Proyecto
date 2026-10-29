@@ -89,18 +89,6 @@ const guardarform = () => {
             Cancelar
           </button>
         </div>
-
-        <!-- <div class="col-3 d-flex justify-content-end">
-        
-      <button
-        type="button"
-        class="botones btn btn-secondary"
-        id="cancel-button"
-        @click="mostrarFormulario = false"
-      >
-        Cancelar
-      </button>
-      </div> -->
       </form>
     </div>
   </div>

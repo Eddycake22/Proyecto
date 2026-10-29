@@ -2,7 +2,7 @@
     <div class="grid" style="--bs-columns: 4; --bs-row: 4">
        <create_user/>
       <section class="" id="Tareas" style="grid-row: 3; grid-column: span 3">
-        <Task_Target />
+        <User_Target />
       </section>
     </div>
 </template>
@@ -65,6 +65,6 @@ h1 {
 <script setup>
 
 import create_user from "../components/create_user.vue";
-import Task_Target from "../components/Task_Target.vue";
+import User_Target from "../components/User_Target.vue";
 
 </script>

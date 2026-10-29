@@ -3,7 +3,8 @@
         <h4 class="mt-1" id="report-name">Nombre de la asignación</h4>
         <p id="status" style="grid-row:2">Estado: </p>
         <p class="d-flex align-items-center " id="Desc" style="grid-row:3;">Descripcion:</p>
-        <button class="btn btn-secondary" style="grid-row:3; grid-column:2;" type="button" id="details-btn">Detalles</button>
+        <!-- <button class="btn btn-secondary" style="grid-row:3; grid-column:2;" type="button" id="details-btn">Detalles</button> -->
+        <Report_details />
         <button class="btn btn-primary" style="grid-row:3; grid-column:3;" type="button" id="complete-btn">Completar</button>
     </div>
 </template>
@@ -81,3 +82,7 @@ p {
     }
 }
 </style>
+<script setup>
+import Report_details from './User_details.vue';
+
+</script>

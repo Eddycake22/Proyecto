@@ -32,7 +32,7 @@ select {
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  background: rgba(239, 240, 248, 0.05)
+  background: rgba(239, 240, 248, 0.09)
   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23FFF' class='size-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E%0A") right 10px center / 20px no-repeat;
   box-shadow: inset 0 1px 1.5px #ccc,
   inset 0 -1px 1px #aaa;
@@ -57,7 +57,7 @@ select {
       padding: 0;
       margin-top: 5px;
       border: none;
-      background: rgba(117, 126, 145, 0.5);
+      background: rgba(69, 83, 114, 0.6);
   backdrop-filter: blur(10px);
       color: #eff0f8;
       border-radius: 5px;
@@ -83,14 +83,14 @@ select {
       transition-timing-function: ease-out;
 
       &:where(:hover, :focus, :active) {
-        background: rgba(12, 17, 50, 0.5)
+        background: rgba(12, 17, 50, 0.2)
           /* rgba(51, 61, 129, 0.9) */
         ;
         color: white;
       }
 
       &:checked {
-        background: rgb(12, 17, 50, .9)
+        background: rgb(12, 17, 50, .5)
           /* rgb(51, 61, 129) */
         ;
         color: white;

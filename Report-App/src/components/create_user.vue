@@ -143,7 +143,7 @@ const user = ref ({
   padding: 20px 35px;
   border-radius: 15px;
   backdrop-filter: blur(10px);
-  color: white;
+  color: white!important;
   /* grid-template-columns: 1fr auto auto!important; */
 }
 

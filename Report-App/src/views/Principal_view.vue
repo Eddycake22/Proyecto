@@ -1,7 +1,8 @@
 <template>
   <body>
   <AdminHeader/>
-  <AdminAsignaciones/>
+  <!-- <Admin_user/> -->
+  <Asignaciones/>
 
   <Stats/>
   </body>
@@ -16,7 +17,8 @@
   import area_list from '../components/area_list.vue';
 import Stats from '../components/Stats.vue';*/
 import AdminHeader from "../components/AdminHeader.vue";
-import AdminAsignaciones from "../views/AdminAsignaciones.vue";
+import Admin_user from "../views/Admin_user.vue";
+import Asignaciones from "./Asignaciones.vue";
 </script>
 
 <style scoped>

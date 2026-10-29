@@ -65,6 +65,7 @@ const task = ref({
             class="form-control"
             v-model="task.name"
             placeholder="Escribir el nombre de la asignación"
+
           />
         </div>
 
@@ -304,7 +305,7 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: rgba(33, 37, 41, 0.75);
+  color: /* rgba(33, 37, 41, 0.75) */#212529;
   cursor: pointer;
   background: #eff0f8
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%230c1132' class='size-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E%0A")
