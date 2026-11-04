@@ -83,6 +83,6 @@ p {
 }
 </style>
 <script setup>
-import Report_details from './User_details.vue';
+import Report_details from './Report_details.vue';
 
 </script>

@@ -2,7 +2,7 @@
   <body>
   <AdminHeader/>
   <!-- <Admin_user/> -->
-  <Asignaciones/>
+  <Admin_Asignaciones/>
 
   <Stats/>
   </body>
@@ -18,11 +18,25 @@
 import Stats from '../components/Stats.vue';*/
 import AdminHeader from "../components/AdminHeader.vue";
 import Admin_user from "../views/Admin_user.vue";
-import Asignaciones from "./Asignaciones.vue";
+import Admin_Asignaciones from "./Admin_Asignaciones.vue";
 </script>
 
 <style scoped>
-  body {
+ /*  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 5%;
+    width: 100vh;
+  }
+  
+@media (max-width: 768px) {
+  body {
+    width: 70%;
+  };
+} */
+  BODY {
+    margin: 5%;
   }
 </style>

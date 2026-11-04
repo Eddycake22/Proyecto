@@ -75,7 +75,6 @@ function cancelprocess () {
     <div class="form-container modal-form" style="--bs-rows: 6">
       <div class="form-hearder d-flex justify-items-between">
         <h3 class="mb-2">Detalles</h3>
-        <i class="bi bi-x"></i>
       </div>
 
       <form class="row g-3" form @submit.prevent="guardarform">
@@ -129,7 +128,7 @@ function cancelprocess () {
         <div class="col-12 col-md-6 d-flex justify-content-end">
           <button
             type="button"
-            class="botones btn btn-primary"
+            class="botones btn btn-light"
             id="submit-button"
             v-if="!mostrarbtn"
             @click="Changestate
@@ -139,7 +138,7 @@ function cancelprocess () {
           </button>
           <button
             type="submit"
-            class="botones btn btn-primary"
+            class="botones btn btn-light"
             id="submit-button"
             v-if="mostrarbtn"
             @click="guardarform
@@ -149,7 +148,7 @@ function cancelprocess () {
           </button>
           <button
             type="button"
-            class="botones btn btn-secondary"
+            class="botones btn btn-dark"
             id="cancel-button"
             @click="cancelprocess"
           ><!-- @click="mostrarFormulario = false" -->
@@ -242,7 +241,7 @@ textarea {
   cursor: pointer;
 }
 #image-label:hover,
-#submit-button:hover {
+#cancel-button:hover {
   background-color: #171f52;
 }
 
@@ -255,9 +254,9 @@ textarea {
   border: none;
 }
 
-#submit-button {
+#cancel-button {
   background-color: #0c1132;
-  margin-right: 14px;
+  margin-left: 14px;
 }
 
 i {

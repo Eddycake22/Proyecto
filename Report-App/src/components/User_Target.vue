@@ -36,12 +36,12 @@ p {
 }
 
 @media (max-width: 768px) {
-    .act-task {
+    /* .act-task {
         width: auto!important;
         grid-template-rows: repeat(4, 1fr);
         grid-template-columns: 2fr 1fr 1fr!important;
         grid-auto-rows: 150px;
-    }
+    } */
 
     h4 {
         font-size: 14px;
@@ -53,18 +53,9 @@ p {
     }
     .btn {
         font-size: 14px;
-        grid-row-start:4!important;
         padding: 5px 5px;
     width: 100px;
     height: 40px; 
-    }
-    #complete-btn {
-        grid-column-start: 4!important;
-    }
-    #details-btn {
-        grid-column-start: 2!important;
-        position: relative;
-        left: 10px;
     }
 }
 </style>

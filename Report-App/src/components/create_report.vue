@@ -152,7 +152,7 @@ const task = ref({
         <div class="col-12 col-md-6 d-flex justify-content-end">
           <button
             type="submit"
-            class="botones btn btn-primary"
+            class="botones btn btn-light"
             id="submit-button"
           >
             Enviar
@@ -160,7 +160,7 @@ const task = ref({
 
           <button
             type="button"
-            class="botones btn btn-secondary"
+            class="botones btn btn-dark"
             id="cancel-button"
             @click="mostrarFormulario = false"
           >
@@ -268,7 +268,7 @@ textarea {
    
 } */
 #image-label:hover,
-#submit-button:hover {
+#cancel-button:hover {
   background-color: #171f52;
 }
 
@@ -281,9 +281,9 @@ textarea {
   border: none;
 }
 
-#submit-button {
+#cancel-button {
   background-color: #0c1132;
-  margin-right: 14px;
+  margin-left: 14px;
 }
 
 img {

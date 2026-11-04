@@ -67,7 +67,7 @@ const user = ref ({
           <input type="password" class="form-control" v-model="user.cpassword" placeholder="Confirmar contraseña" />
         </div>
 
-        <div class="col-6">
+        <div class="col-md-6">
           <label for="rol" name="rol-select position-area" class="form-label">Rol</label>
           <select class="form-select" aria-label="Seleccionar" v-model="user.rol" >
             <option value="#">Seleccionar...</option>
@@ -77,12 +77,12 @@ const user = ref ({
           </select>
         </div>
 
-        <div class="col-12 col-md-6 d-flex justify-content-end">
-          <button type="submit" class="botones btn btn-primary" id="submit-button">
+        <div class="col-12 col-md-6 d-flex justify-content-md-end justify-content-between align-items-end">
+          <button type="submit" class="botones btn btn-light" id="submit-button">
             Guardar
           </button>
 
-          <button type="button" class="botones btn btn-secondary" id="cancel-button" @click="mostrarFormulario = false">
+          <button type="button" class="botones btn btn-dark" id="cancel-button" @click="mostrarFormulario = false">
             Cancelar
           </button>
         </div>
@@ -108,6 +108,7 @@ const user = ref ({
 
 #open-form {
   width: 20%;
+  height: 45px;
   padding: 5px 10px;
   border-radius: 11px;
   font-size: 15px;
@@ -165,35 +166,21 @@ textarea {
   cursor: pointer;
 }
 
-/* 
-#image-upload {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #0c1132;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-   
-} */
 #image-label:hover,
-#submit-button:hover {
+#cancel-button:hover {
   background-color: #171f52;
 }
 
 #submit-button,
 #cancel-button {
-  /* left: 59.5%;
-  top: 15px; */
   width: 100px;
   height: 40px;
   border: none;
 }
 
-#submit-button {
+#cancel-button {
   background-color: #0c1132;
-  margin-right: 14px;
+  margin-left: 14px;
 
 }
 
@@ -304,13 +291,11 @@ select {
     height: 45px;
     width: 120px;
   }
-  /* button {
-    height: 35px;
-    width: 40px;
-    font-size: 14px;
-    border-radius: 10px;
-    margin-top: 5px;
+  /* .col-12.col-md-6.d-flex.justify-content-end.align-items-end {
+    justify-content: between!important;
   } */
-
+   #submit-button {
+    margin:0;
+  }
 }
 </style>

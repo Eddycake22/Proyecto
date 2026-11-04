@@ -20,7 +20,7 @@ function activar() {
             </button>
             <ul class="navbar-menu" ref="navbarMenu">
                 <li><a href="">Administrar usuarios</a></li>
-                <li><a href="" class="active">Asignaciones</a></li>
+                <li><a href="">Asignaciones</a></li>
             </ul>
         </div>
     </nav>
@@ -32,18 +32,14 @@ function activar() {
     align-items: center;
     justify-content: center;
     height: 45px;
-    /* width: 100%; */
     position: sticky;
     top: auto;
     background:  white;
-    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0); */
-    box-shadow:/* 
-    inset 0 1px 1.5px #ccc, 
-  inset 0 -1px 1px #aaa, */
+    /* box-shadow:
     inset 1px 1px 5px rgba(255, 255, 255, 0.2), 
     inset 1px 1px 5px rgba(0, 0, 0, 0.1),
     2px 2px 10px rgba(0, 0, 0, 0.4),
-    -2px -2px 8px rgba(255, 255, 255, 0.1);
+    -2px -2px 8px rgba(255, 255, 255, 0.1); */
     backdrop-filter: blur(1px);
     z-index: 999;
     border-radius: 25px;
@@ -59,15 +55,7 @@ function activar() {
     max-width: 1600px;
 }
 
-.navbar-logo {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.navbar-container .navbar-menu {
+.navbar-container .navbar-menu{
     display: flex;
     text-align: center;
     gap: 1.5rem;
@@ -83,7 +71,7 @@ ul {
 }
 .navbar-container .navbar-menu li a {
     text-decoration: none;
-    color: #0C1132;
+    color: #0c1132;
     font-size: 1.5rem;
     font-weight: 500;
     padding: 6px 20px;
@@ -95,16 +83,12 @@ ul {
 .navbar-container .navbar-menu li a:hover,
 .navbar-container .navbar-menu li .active {
     border: none;
-    background: rgba(12, 17, 50, 0.1);
-    /* background: rgba(239, 240, 248, .15); 
+    COLOR: #EFF0F8;
+    background: rgba(12, 17, 50, 0.4); 
     box-shadow: 
-    inset 1px 1px 2px rgba(0, 0, 0, 0.1),
-    1px 1px 4px rgba(0, 0, 0, 0.4),
-    -1px -1px 4px rgba(255, 255, 255, 0.1),
-     inset 0px .2px .2px #ccc, 
-  inset 0px -.2px .2px #aaa; */
-    color: #0C1132;
-    font-weight: 500;
+    inset 1px 1px 2px rgba(0, 0, 0, 0.2),
+    1px 1px 4px rgba(0, 0, 0, 0.3),
+    -1px -1px 4px rgba(255, 255, 255, 0.1);
 }
 
 .navbar-toggle {
@@ -140,7 +124,8 @@ ul {
     .navbar {
         backdrop-filter: none;
         align-self: flex-end;
-        margin-right: 30px;
+        /* margin-right: 30px; */
+        background: none;
     }
 
     .navbar-container .navbar-menu {
@@ -151,7 +136,7 @@ ul {
         position: absolute;
         height: 100vh;
         width: 250px;
-        top: -40px;
+        top: -15px;
         right: -35px;
         padding: 5rem 1.5rem;
         background: linear-gradient(
@@ -164,6 +149,9 @@ ul {
     .navbar-toggle {
         display: block;
         z-index: 999;
+    }
+    li a {
+        color: #eff0f8!important;
     }
 }
 </style>
