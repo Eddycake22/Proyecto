@@ -10,7 +10,4 @@ import AdminTask_target from "../components/AdminTask_target.vue";
 </script>
 
 <style scoped>
-body {
-    width: 80vh;
-    margin: 0;}
 </style>
