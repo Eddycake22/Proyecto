@@ -423,12 +423,8 @@ select {
     width: 120px;
   }
 
-  /* button {
-    height: 35px;
-    width: 40px;
-    font-size: 14px;
-    border-radius: 10px;
-    margin-top: 5px;
-  } */
+  #details-btn {
+    grid-row: 4!important;
+  }
 }
 </style>

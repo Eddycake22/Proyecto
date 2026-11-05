@@ -3,7 +3,7 @@
         <h4 class="mt-1" id="report-name">Nombre de usuario</h4>
         <p id="status" style="grid-row:2">Rol: </p>
         <User_details />
-        <button class="btn btn-primary" style="grid-row:3; grid-column:3;" type="button" id="complete-btn">Completar</button>
+        
     </div>
 </template>
 
@@ -27,7 +27,9 @@ p {
     background-color: #0C1132;
     border: none;
 }
-
+h4 {
+    font-weight: 525;
+}
 .btn.btn-primary:hover {
         background-color: #171f52!important;
     }

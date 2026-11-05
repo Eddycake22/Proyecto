@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
-
+import AdminTask_target from '../components/AdminTask_target.vue';
+import Stats from '../components/Stats.vue';
 const vistaPrevia = ref<string | null>(null);
 
 function mostrarVistaPrevia(event: Event) {
@@ -73,7 +74,8 @@ function cancelprocess () {
     @click.self="mostrarFormulario = false"
   >
     <div class="form-container modal-form" style="--bs-rows: 6">
-      <div class="form-hearder d-flex justify-items-between">
+      <section id="Detalles">
+        <div class="form-hearder d-flex justify-items-between">
         <h3 class="mb-2">Detalles</h3>
       </div>
 
@@ -111,7 +113,7 @@ function cancelprocess () {
           />
         </div>
 
-        <div class="select col-6">
+        <div class="select col-md-6">
           <label class="form-label">Rol</label>
           <select
             class="form-select"
@@ -125,7 +127,7 @@ function cancelprocess () {
             <option value="3">Vista</option>
           </select>
         </div>
-        <div class="col-12 col-md-6 d-flex justify-content-end">
+        <div class="col-12 d-flex justify-content-md-end justify-content-between">
           <button
             type="button"
             class="botones btn btn-light"
@@ -156,6 +158,15 @@ function cancelprocess () {
           </button>
         </div>
       </form>
+      </section>
+      <section>
+        <h3 class="my-4">Asignaciones</h3>
+        <AdminTask_target />
+      </section>
+      <section>
+        <h3 class="my-4">Estadísticas</h3>
+        <Stats/>
+      </section>
     </div>
   </div>
 </template>
@@ -207,16 +218,19 @@ function cancelprocess () {
 
 .form-container {
   display: grid;
-  width: 80%;
-  height: Auto;
+  width: 70%;
   margin: 0px 150px 0px 150px;
-  color: white;
+ color: white;
   background: rgba(217, 217, 217, 0.25);
   backdrop-filter: blur(10px);
   padding: 20px 35px;
   border-radius: 15px;
   backdrop-filter: blur(10px);
-  /* grid-template-columns: 1fr auto auto!important; */
+  /* position: relative;
+  top: 20%; */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  max-height: 80vh;
 }
 
 input,
@@ -228,7 +242,12 @@ textarea {
   background-color: #dddfeb;
   color: rgba(33, 37, 41, 0.75);
 }
-
+#Detalles {
+    color: white;
+}
+/* .Asignaciones {
+    color: white!important;
+} */
 #image-label {
   display: flex;
   flex-direction: column;
@@ -355,6 +374,10 @@ select {
     width: 90%;
     margin: 0px 40px 0px 40px;
     padding: 20px 35px;
+    scrollbar-width: thin;
+    overflow-x: none!important;
+    display: flex;
+    flex-direction: column;
     /* grid-template-columns: 1fr auto auto!important; */
   }
 
@@ -363,13 +386,5 @@ select {
     height: 45px;
     width: 120px;
   }
-
-  /* button {
-    height: 35px;
-    width: 40px;
-    font-size: 14px;
-    border-radius: 10px;
-    margin-top: 5px;
-  } */
 }
 </style>

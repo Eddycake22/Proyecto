@@ -32,7 +32,7 @@ h1, h2, h3, h4, a{
     color: /* #0C1132 */#EFF0F8;
 }   
 
-p, h4, div, label, input, select, textarea, button {
+p, div, label, input, select, textarea, button {
     font-family: 'Roboto', sans-serif!important;
 }
 

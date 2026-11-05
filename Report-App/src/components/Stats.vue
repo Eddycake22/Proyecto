@@ -1,7 +1,13 @@
+<script setup>
+import { ref } from 'vue';
+
+const success = ref('75%');
+const danger = ref('25%');
+</script>
 <template>
   <div class="grid stats">
     <div class="TargetA grid" style="--bs-columns:2; --bs-rows: auto;">
-      <h3 style="grid-column-start:1; grid-column-end:span2;">Estado General de Asignaciones</h3>
+      <h3 class="titulo" style="grid-column-start:1; grid-column-end:span2;">Estado General de Asignaciones</h3>
       <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0"
         aria-valuemax="100" style="height: 40px;">
         <div class="progress-bar bg-success" style="width: 25%">Tareas completadas 25%</div>
@@ -14,7 +20,7 @@
 
     <div class="TargetB"> <!-- style="--bs-columns:2; --bs-rows: auto;" -->
       <div class="encabezado d-flex justify-content-between">
-        <h3 class="align-self-center">Estado de Asignaciones por Área</h3> <!-- style="--bs-rows-end:2;"-->
+        <h3 class="titulo align-self-center">Estado de Asignaciones por Área</h3> <!-- style="--bs-rows-end:2;"-->
         <div class="select fw-medium">
           <select name="area-select position-area">
             <option value="1" selected>Área 1</option>
@@ -25,36 +31,27 @@
       </div>
       <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0"
         aria-valuemax="100" style="height: 40px;">
-        <div class="progress-bar bg-success" style="width: 75%">Tareas completada 75%</div>
+        <div class="progress-bar bg-success" style="width: 75%;">Tareas completada 75%</div>
       </div>
       <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0"
-        aria-valuemax="100" style="height: 40px; grid-row-start: 3;">
-        <div class="progress-bar bg-danger" style="width: 25%">Tareas pendientes 25%</div>
+        aria-valuemax="100" style="height: 40px; grid-row-start: 3;"><p>Tareas pendientes {{ danger }}</p> ``
+        <div class="progress-bar bg-danger" style="width: v-bind(danger)"></div>
       </div>
     </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 .stats {
   display: grid;
-  width: 70%;
   row-gap: 30px;
+  color: #0C1132;
 
 }
 
-/* .Target{
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: min-content;
-    background: white;
-    padding: 30px;
-    display: grid;
-    gap: 20px;
-    border-radius: 25px;
-} */
-
 .TargetA,
 .TargetB {
+  width: 100%;
   background: white;
   padding: 30px 30px;
   border-radius: 25px;
@@ -83,8 +80,27 @@ h3 {
 
 .progress {
   border-radius: 20px !important;
+  position: relative;
+  
 }
-
+p {
+  position: absolute;
+  z-index: 99;
+  font-size: 14px;
+  margin-bottom: 0px!important;
+  top:10px;
+  left:10px;
+}
+.progress-bar {
+  color: #0C1132!important;
+  position: relative;
+}
+.bg-success {
+  --bs-success-rgb:75, 197, 146;
+}
+.bg-danger {
+  --bs-danger-rgb:255, 101, 101;
+}
 select {
   appearance: none;
 
@@ -97,7 +113,7 @@ select {
   }
 
   z-index: 10;
-  max-width: 150px;
+  /* max-width: 150px; */
   height: 30px;
   display: flex;
   justify-content: space-between;
@@ -193,8 +209,8 @@ select {
     font-size: 12px;
   }
 
-  h3 {
-    font-size: 20px;
+  .titulo {
+    font-size: 18px!important;
   }
   .encabezado{
     flex-direction: column!important;
@@ -202,6 +218,10 @@ select {
   }
   select {
     min-width: 100%!important;
+  }
+  p{
+    top: 5px!important;
+    font-size: 12px;
   }
 }
 </style>

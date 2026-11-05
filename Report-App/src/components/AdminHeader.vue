@@ -144,6 +144,9 @@ ul {
         );
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(10px);
+        TEXT-decoration: none;
+        text-align:  left;
+
     }
 
     .navbar-toggle {

@@ -21,7 +21,7 @@ select {
     }
   }
 
-  max-width: 150px;
+  /* max-width: 150px; */
   height: 45px;
   display: flex;
   justify-content: space-between;

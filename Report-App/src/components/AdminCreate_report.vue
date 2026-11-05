@@ -34,6 +34,7 @@ const task = ref({
   comment: "",
   active: "",
   image: "",
+  activity: "",
 });
 </script>
 
@@ -111,6 +112,20 @@ const task = ref({
             placeholder="Escribir el número de activo"
             v-model="task.active"
           />
+        </div>
+
+        <div class="select col-6">
+          <label class="form-label">Agregar campo</label>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            v-model="task.board"
+          >
+            <option value="#">Seleccionar...</option>
+            <option value="1">Campo 1</option>
+            <option value="2">Campo 2</option>
+            <option value="3">Campo 3</option>
+          </select>
         </div>
 
         <div class="col-md-12">

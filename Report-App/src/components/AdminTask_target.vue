@@ -1,30 +1,33 @@
 <template>
-    <div class="act-task shadow-sm" style="--bs-rows:3; --bs-columns:3; column-gap:1rem;">
+    <div class="act-task shadow-sm" style="--bs-rows:4; --bs-columns:3; column-gap:1rem;">
         <h4 class="mt-1" id="report-name">Nombre de la asignación</h4>
-        <p id="status" style="grid-row:2">Estado: </p>
+        <div class="d-flex gap-3" style="grid-row:2; grid-column:1">
+        <p id="user-name">Técnico: </p>
+        <p id="status">Estado: </p>
+        </div>
         <p class="d-flex align-items-center " id="Desc" style="grid-row:3;">Descripcion:</p>
         <!-- <button class="btn btn-secondary" style="grid-row:3; grid-column:2;" type="button" id="details-btn">Detalles</button> -->
         <Report_details />
-        <button class="btn btn-primary" style="grid-row:3; grid-column:3;" type="button" id="complete-btn">Completar</button>
+        
     </div>
 </template>
 
 <style scoped>
 .act-task {
     display: grid;
-    width: 100vh;
+    width: 100%;
     grid-template-columns: 1fr auto auto;
     grid-auto-rows: min-content;
     background-color: white;
     border-radius: 25px;
     margin: 0px;
     padding: 20px;
+    color: #0C1132;
 }
 p {
     font-size: 16px;
     margin: 0px;
 }
-
 #complete-btn {
     background-color: #0C1132;
     border: none;
@@ -51,22 +54,10 @@ p {
     }
     p {
         font-size: 13px;
-        grid-column: span 4;
+        /* grid-column: span 4; */
     }
-    .btn {
-        font-size: 14px;
+    .btn, #details-btn {
         grid-row-start:4!important;
-        padding: 5px 5px;
-    width: 100px;
-    height: 40px; 
-    }
-    #complete-btn {
-        grid-column-start: 4!important;
-    }
-    #details-btn {
-        grid-column-start: 2!important;
-        position: relative;
-        left: 10px;
     }
 }
 </style>

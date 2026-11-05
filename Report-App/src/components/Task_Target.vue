@@ -36,7 +36,6 @@ p {
     font-size: 16px;
     margin: 0px;
 }
-
 #complete-btn {
     background-color: #0C1132;
     border: none;

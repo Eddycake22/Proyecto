@@ -9,7 +9,7 @@
 
 <style scoped>
 .grid {
-  width: 80vw;
+  width: 80%;
   grid-template-columns: 1fr auto auto;
   display: grid;
   grid-auto-rows: min-content;
@@ -43,10 +43,6 @@ h1 {
     column-gap: 0px !important;
     /*grid-template-columns: repeat(auto, minmax(250px, 1fr)); 
         grid-template-rows: repeat(auto);*/
-  }
-  .select {
-    /* grid-area: 3 / span 4; 
-    grid-column-start: 2;*/
   }
   #open-form {
     grid-row-start: 1;
