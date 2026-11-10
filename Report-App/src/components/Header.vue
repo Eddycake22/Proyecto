@@ -122,7 +122,7 @@ function activar() {
     height: 60px;
     /* width: 100%; */
     position: sticky;
-    top: 0;
+    top: auto;
     background: radial-gradient(
       at 50% 50%,
     rgba(0, 0, 0, 0.1) 45%,

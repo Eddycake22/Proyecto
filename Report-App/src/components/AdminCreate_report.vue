@@ -20,7 +20,7 @@ const mostrarFormulario = ref(false);
 
 // Función opcional para procesar el envío del formulario
 const guardarform = () => {
-  alert("¡Formulario enviado!");
+  alert("¡Formulario enviado!         kdaslkdjaskdjal");
   mostrarFormulario.value = false; // Cierra el formulario tras enviar
 };
 
