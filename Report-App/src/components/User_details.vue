@@ -183,7 +183,6 @@ function cancelprocess () {
   justify-content: center;
   align-items: center;
   z-index: 999;
-  /* Asegura que esté por encima de todo */
 }
 
 #open-form {
@@ -225,11 +224,10 @@ function cancelprocess () {
   backdrop-filter: blur(10px);
   padding: 20px 35px;
   border-radius: 15px;
-  backdrop-filter: blur(10px);
   /* position: relative;
   top: 20%; */
   overflow-y: auto;
-  scrollbar-width: thin;
+  scrollbar-width: none;
   max-height: 80vh;
 }
 
@@ -374,7 +372,6 @@ select {
     width: 90%;
     margin: 0px 40px 0px 40px;
     padding: 20px 35px;
-    scrollbar-width: thin;
     overflow-x: none!important;
     display: flex;
     flex-direction: column;

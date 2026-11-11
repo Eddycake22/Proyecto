@@ -215,17 +215,17 @@ function cancelprocess () {
 
 <style scoped>
 .overlay {
-  position: fixed;
+  position:  sticky;
   top: 0;
   left: 0;
-  width: 100vw;
+  max-width: fit-content;
   height: 100vh;
   background-color: rgba(2, 10, 36, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
-  /* Asegura que esté por encima de todo */
+  overflow: hidden!important; 
 }
 
 #open-form {
@@ -269,8 +269,6 @@ function cancelprocess () {
   padding: 20px 35px;
   border-radius: 15px;
   backdrop-filter: blur(10px);
-   overflow-y: auto; 
-  /* grid-template-columns: 1fr auto auto!important; */
 }
 
 input,
@@ -425,6 +423,12 @@ select {
 
   #details-btn {
     grid-row: 4!important;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .form-container {
+    background: red;
   }
 }
 </style>

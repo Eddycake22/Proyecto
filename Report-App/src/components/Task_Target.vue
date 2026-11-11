@@ -10,18 +10,6 @@
 </template>
 
 <style scoped>
-/* .act-task {
-    display: grid;
-    width: auto;
-    grid-template-columns: 1fr auto auto;
-    grid-auto-rows: min-content;
-    background-color: white;
-    
-    border-radius: px;
-    margin: 0px;
-    padding: 20px;
-} */ /* background-color: rgb(243, 196, 43); */
-
 .act-task {
     display: grid;
     width: auto!important;

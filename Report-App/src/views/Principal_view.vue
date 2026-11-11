@@ -17,6 +17,7 @@
 import Stats from '../components/Stats.vue';*/
 import AdminHeader from "../components/AdminHeader.vue";
 import Admin_user from "./Admin_user.vue";
+import Asignaciones from "../views/Asignaciones.vue";
 </script>
 
 <style scoped>
