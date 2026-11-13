@@ -1,6 +1,7 @@
 <script setup lang="ts">
 //Hacer que se muestre la vista previa de la imagen seleccionada en el formulario de reporte
 import { ref } from "vue";
+import {reactive} from 'vue';
 
 const vistaPrevia = ref<string | null>(null);
 
@@ -15,7 +16,7 @@ function mostrarVistaPrevia(event: Event) {
   }
 }
 
-// 1. Creamos una variable reactiva que inicia en 'false' (formulario oculto)
+// variable reactiva que inicia en 'false' (formulario oculto)
 const mostrarFormulario = ref(false);
 
 // Función opcional para procesar el envío del formulario
@@ -24,15 +25,19 @@ const guardarform = () => {
   mostrarFormulario.value = false; // Cierra el formulario tras enviar
 };
 
-import axios from 'axios';
+const formdefault = {
+    name: '',
+    email: '',
+    password: '',
+    cpassword: '',
+    rol: '#',
+};
 
-const user = ref ({
-  name:'',
-  email: '',
-  password:'',
-  cpassword:'',
-  rol:'#',
-})
+const user = reactive ({...formdefault});
+
+function resetForm() {
+  Object.assign(user, formdefault);
+};
 </script>
 
 <template>
@@ -40,7 +45,7 @@ const user = ref ({
     Crear Usuario
   </button>
 
-  <div v-if="mostrarFormulario" class="overlay" @click.self="mostrarFormulario = false">
+  <div v-if="mostrarFormulario" class="overlay" @click.self="mostrarFormulario = false; resetForm()">
     <div class="form-container modal-form" style="--bs-rows:6;">
       <div class="form-hearder">
         <h3 class="mb-2">Crear Usuario</h3>
@@ -82,7 +87,7 @@ const user = ref ({
             Guardar
           </button>
 
-          <button type="button" class="botones btn btn-dark" id="cancel-button" @click="mostrarFormulario = false">
+          <button type="button" class="botones btn btn-dark" id="cancel-button" @click="mostrarFormulario = false; resetForm()">
             Cancelar
           </button>
         </div>

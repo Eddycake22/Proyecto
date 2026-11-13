@@ -2,6 +2,8 @@
 import { ref } from "vue";
 import AdminTask_target from '../components/AdminTask_target.vue';
 import Stats from '../components/Stats.vue';
+import {reactive} from 'vue';
+
 const vistaPrevia = ref<string | null>(null);
 
 function mostrarVistaPrevia(event: Event) {
@@ -32,15 +34,10 @@ const mostrarbtn = ref(false);
 function Changestate () {
   allowedit.value = !allowedit.value;
   mostrarbtn.value = !mostrarbtn.value;
-  /* if (accion.value = "Editar") {
-    accion.value = "Guardar";
-  } else {
-    accion.value = "Editar";
-  };
- */
 };
 
 function cancelprocess () {
+  resetForm();
   if (!allowedit.value) {
     Changestate();
   } else {
@@ -48,13 +45,27 @@ function cancelprocess () {
   };
 };
 
- const user = ref ({
+/*  const user = ref ({
   name:'',
   email: '',
   password:'',
   cpassword:'',
   rol:'#',
-})
+}) */
+
+const formdefault = {
+    name: '',
+    email: '',
+    password: '',
+    cpassword: '',
+    rol: '#',
+};
+
+const user = reactive ({...formdefault});
+
+function resetForm() {
+  Object.assign(user, formdefault);
+};
 </script>
 
 <template>
