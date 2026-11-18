@@ -7,8 +7,18 @@
         </div>
         <p class="d-flex align-items-center " id="Desc" style="grid-row:3;">Descripcion:</p>
         <!-- <button class="btn btn-secondary" style="grid-row:3; grid-column:2;" type="button" id="details-btn">Detalles</button> -->
-        <Report_details />
-        
+         <button
+    class="btn btn-secondary"
+    id="details-btn"
+    type="button"
+    @click="mostrarFormulario = true"
+    style="grid-row:3; grid-column:2;"  
+  >
+    Detalles
+  </button>
+    <!-- <teleport to=""> -->
+        <Report_details :mostrar="mostrarFormulario" :allowedit = "allowedit" :mostrarbtn = "mostrarbtn" @ChangeState="allowedit.value=!allowedit.value, mostrarbtn.value=!mostrarbtn.value"/>
+    <!--@cancelprocess="mostrarFormulario=false"  </teleport> -->
     </div>
 </template>
 
@@ -63,5 +73,36 @@ p {
 </style>
 <script setup>
 import Report_details from './Report_details.vue';
+import { ref } from 'vue';
 
+const mostrarFormulario = ref(false);
+const allowedit = ref (true);
+const mostrarbtn = ref(false);
+
+function cancelprocess () {
+  if (!allowedit.value) {
+    Changestate();
+  } else {
+    mostrarFormulario.value = false;
+  };
+};
+
+const guardarform = () => {
+  alert("¡Formulario enviado!");
+  mostrarFormulario.value = false; // Cierra el formulario tras enviar
+  Changestate();
+};
+
+function Changestate () {
+  allowedit.value = !allowedit.value;
+  mostrarbtn.value = !mostrarbtn.value;
+};
+
+function cancel () {
+  if (!allowedit.value) {
+    Changestate();
+  } else {
+    mostrarFormulario.value = false;
+  };
+};
 </script>

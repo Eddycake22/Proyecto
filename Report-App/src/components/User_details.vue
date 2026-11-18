@@ -45,14 +45,6 @@ function cancelprocess () {
   };
 };
 
-/*  const user = ref ({
-  name:'',
-  email: '',
-  password:'',
-  cpassword:'',
-  rol:'#',
-}) */
-
 const formdefault = {
     name: '',
     email: '',
@@ -393,6 +385,10 @@ select {
     font-size: 14px;
     height: 45px;
     width: 120px;
+  }
+}
+@media (max-width: 1199.98px) {
+  .form-container {
   }
 }
 </style>

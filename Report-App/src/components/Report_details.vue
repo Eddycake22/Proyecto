@@ -14,38 +14,36 @@ function mostrarVistaPrevia(event: Event) {
   }
 };
 
+const props = defineProps({
+  mostrar: Boolean,
+  allowedit : Boolean,
+  mostrarbtn: Boolean,
+})
 
+/* 
+const allowedit = ref (true);
+const mostrarbtn = ref(false); */
 const mostrarFormulario = ref(false);
 
 // Función opcional para procesar el envío del formulario
-const guardarform = () => {
+/* const guardarform = () => {
   alert("¡Formulario enviado!");
   mostrarFormulario.value = false; // Cierra el formulario tras enviar
   Changestate();
 };
 
-const allowedit = ref (true);
-/* const accion = ref ("Editar"); */
-const mostrarbtn = ref(false);
-
 function Changestate () {
   allowedit.value = !allowedit.value;
   mostrarbtn.value = !mostrarbtn.value;
-  /* if (accion.value = "Editar") {
-    accion.value = "Guardar";
-  } else {
-    accion.value = "Editar";
-  };
- */
 };
 
-function cancelprocess () {
+function cancel () {
   if (!allowedit.value) {
     Changestate();
   } else {
     mostrarFormulario.value = false;
   };
-};
+}; */
 
  const task = ref({
   name: "",
@@ -59,20 +57,11 @@ function cancelprocess () {
 </script>
 
 <template>
-  <button
-    class="btn btn-secondary"
-    id="details-btn"
-    type="button"
-    @click="mostrarFormulario = true"
-    style="grid-row:3; grid-column:2;"  
-  >
-    Detalles
-  </button>
-
+ 
   <div
-    v-if="mostrarFormulario"
+    v-if="mostrar"
     class="overlay"
-    @click.self="mostrarFormulario = false"
+    @click.self="$emit('cancelprocess')"
   >
     <div class="form-container modal-form" style="--bs-rows: 6">
       <div class="form-hearder">
@@ -183,9 +172,8 @@ function cancelprocess () {
             type="button"
             class="botones btn btn-light"
             id="submit-button"
-            v-if="!mostrarbtn"
-            @click="Changestate
-            /* allowedit = !allowedit */"
+            v-if= "!mostrarbtn"
+            @click="$emit('ChangeState')"
           >
             Editar
           </button>
@@ -194,8 +182,6 @@ function cancelprocess () {
             class="botones btn btn-light"
             id="submit-button"
             v-if="mostrarbtn"
-            @click="guardarform
-            /* allowedit = !allowedit */"
           >
             Guardar
           </button>
@@ -203,7 +189,7 @@ function cancelprocess () {
             type="button"
             class="botones btn btn-dark"
             id="cancel-button"
-            @click="cancelprocess"
+            @click="$emit('cancelprocess')"
           ><!-- @click="mostrarFormulario = false" -->
             Cancelar
           </button>
@@ -215,8 +201,8 @@ function cancelprocess () {
 
 <style scoped>
 .overlay {
-  position:  sticky;
-  top: 0;
+  position: absolute;
+  top: -70px;
   left: 0;
   max-width: fit-content;
   height: 100vh;
@@ -285,6 +271,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   /* margin: 0px 7px; */
   background-color: #0c1132;
   color: white;
@@ -409,6 +396,7 @@ select {
 
 @media (max-width: 768px) {
   .form-container {
+    background: red;
     width: 90%;
     margin: 0px 40px 0px 40px;
     padding: 20px 35px;
@@ -428,7 +416,10 @@ select {
 
 @media (max-width: 1199.98px) {
   .form-container {
-    background: red;
+    margin: 0px 40px 0px 40px;
+  }
+  .btn-image {
+    height:40px;
   }
 }
 </style>
