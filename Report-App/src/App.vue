@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import Home from './views/Home.vue';
-//import Login from './views/Home.vue';
+import Login from './views/Login.vue';
 </script>
 
 <template>
   <body>
-<Home/> 
+<Login/> 
   </body>
   
 </template>
