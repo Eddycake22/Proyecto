@@ -17,29 +17,21 @@ function mostrarVistaPrevia(event: Event) {
   }
 };
 
-
+const editar = ref (false);
 const mostrarFormulario = ref(false);
 
-// Función opcional para procesar el envío del formulario
-const guardarform = () => {
+function guardarform () {
   alert("¡Formulario enviado!");
-  mostrarFormulario.value = false; // Cierra el formulario tras enviar
-  Changestate();
+  mostrarFormulario.value = false; 
+  changestate();
 };
-
-const allowedit = ref (true);
-/* const accion = ref ("Editar"); */
-const mostrarbtn = ref(false);
-
-function Changestate () {
-  allowedit.value = !allowedit.value;
-  mostrarbtn.value = !mostrarbtn.value;
+function changestate () {
+  editar.value = !editar.value;
 };
-
 function cancelprocess () {
   resetForm();
-  if (!allowedit.value) {
-    Changestate();
+  if (editar.value) {
+    changestate();
   } else {
     mostrarFormulario.value = false;
   };
@@ -52,9 +44,7 @@ const formdefault = {
     cpassword: '',
     rol: '#',
 };
-
 const user = reactive ({...formdefault});
-
 function resetForm() {
   Object.assign(user, formdefault);
 };
@@ -90,7 +80,7 @@ function resetForm() {
             class="form-control"
             v-model="user.name"
             placeholder="Nombre del Usuario"
-            :disabled="allowedit"
+            :disabled="!editar"
           />
         </div>
 
@@ -101,7 +91,7 @@ function resetForm() {
             class="form-control"
             v-model="user.email"
             placeholder="Correo electrónico"
-            :disabled="allowedit"
+            :disabled="!editar"
           />
         </div>
 
@@ -112,7 +102,7 @@ function resetForm() {
             class="form-control"
             v-model="user.password"
             placeholder="Contraseña"
-            :disabled="allowedit"
+            :disabled="!editar"
           />
         </div>
 
@@ -122,7 +112,7 @@ function resetForm() {
             class="form-select"
             aria-label="Default select example"
             v-model="user.rol"
-            :disabled="allowedit"
+            :disabled="!editar"
           >
             <option value="#">Seleccionar...</option>
             <option value="1">Técnico</option>
@@ -135,9 +125,9 @@ function resetForm() {
             type="button"
             class="botones btn btn-light"
             id="submit-button"
-            v-if="!mostrarbtn"
-            @click="Changestate
-            /* allowedit = !allowedit */"
+            v-if="!editar"
+            @click="changestate
+            /* editar = !editar */"
           >
             Editar
           </button>
@@ -145,9 +135,9 @@ function resetForm() {
             type="submit"
             class="botones btn btn-light"
             id="submit-button"
-            v-if="mostrarbtn"
+            v-if="editar"
             @click="guardarform
-            /* allowedit = !allowedit */"
+            /* editar = !editar */"
           >
             Guardar
           </button>
@@ -385,10 +375,6 @@ select {
     font-size: 14px;
     height: 45px;
     width: 120px;
-  }
-}
-@media (max-width: 1199.98px) {
-  .form-container {
   }
 }
 </style>

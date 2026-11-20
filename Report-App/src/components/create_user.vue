@@ -128,6 +128,8 @@ function resetForm() {
   transition-property: all;
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
+  border: none!important;
+
 }
 
 #open-form:hover {

@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
-
+import { ref, reactive } from "vue";
 const vistaPrevia = ref<string | null>(null);
 
 function mostrarVistaPrevia(event: Event) {
@@ -16,48 +15,42 @@ function mostrarVistaPrevia(event: Event) {
 
 const props = defineProps({
   mostrar: Boolean,
-  allowedit : Boolean,
+  editar : Boolean,
   mostrarbtn: Boolean,
-})
-
-/* 
-const allowedit = ref (true);
-const mostrarbtn = ref(false); */
-const mostrarFormulario = ref(false);
-
-// Función opcional para procesar el envío del formulario
-/* const guardarform = () => {
-  alert("¡Formulario enviado!");
-  mostrarFormulario.value = false; // Cierra el formulario tras enviar
-  Changestate();
-};
-
-function Changestate () {
-  allowedit.value = !allowedit.value;
-  mostrarbtn.value = !mostrarbtn.value;
-};
-
-function cancel () {
-  if (!allowedit.value) {
-    Changestate();
-  } else {
-    mostrarFormulario.value = false;
-  };
-}; */
-
- const task = ref({
-  name: "",
-  device: "",
-  brand: "",
-  board: "#",
-  comment: "",
-  active: "",
-  image: "",
 });
-</script>
 
+const emit = defineEmits([
+  'changestate',
+  'cancelprocess',
+  'guardarform'
+]);
+
+interface Reportform {
+    name: string,
+    device: string,
+    brand: string,
+    active: number | null,
+    board: string,
+    comment: string
+};
+
+const inicialform:Reportform={
+  name: '',
+  device:'',
+  brand:'',
+  active:null,
+  board:'#',
+  comment: ''
+};
+
+const formdefault = reactive({...inicialform});
+
+function resetForm() {
+  Object.assign(formdefault, inicialform);
+};
+
+</script>
 <template>
- 
   <div
     v-if="mostrar"
     class="overlay"
@@ -68,15 +61,15 @@ function cancel () {
         <h3 class="mb-2">Detalles del Reporte</h3>
       </div>
 
-      <form class="row g-3" form @submit.prevent="guardarform">
+      <form class="row g-3" form @submit.prevent> <!-- ="guardarform" -->
         <div class="col-md-6">
           <label for="name" class="form-label">Nombre de la asignación</label>
           <input
             type="text"
             class="form-control"
-            v-model="task.name"
+            v-model="formdefault.name"
             placeholder="Escribir el nombre de la asignación"
-            :disabled="allowedit"
+            :disabled="!editar"
 
           />
         </div>
@@ -86,9 +79,9 @@ function cancel () {
           <input
             type="text"
             class="form-control"
-            v-model="task.device"
+            v-model="formdefault.device"
             placeholder="Escribir el nombre del equipo"
-            :disabled="allowedit"
+            :disabled="!editar"
           />
         </div>
 
@@ -97,9 +90,9 @@ function cancel () {
           <input
             type="text"
             class="form-control"
-            v-model="task.brand"
+            v-model="formdefault.brand"
             placeholder="Escribir el nombre de la marca"
-            :disabled="allowedit"
+            :disabled="!editar"
           />
         </div>
 
@@ -108,8 +101,8 @@ function cancel () {
           <select
             class="form-select"
             aria-label="Default select example"
-            v-model="task.board"
-            :disabled="allowedit"
+            v-model="formdefault.board"
+            :disabled="!editar"
           >
             <option value="#">Seleccionar...</option>
             <option value="1">Xcaret</option>
@@ -124,8 +117,8 @@ function cancel () {
             type="text"
             class="form-control"
             placeholder="Escribir el número de activo"
-            v-model="task.active"
-            :disabled="allowedit"
+            v-model="formdefault.active"
+            :disabled="!editar"
           />
         </div>
 
@@ -133,16 +126,15 @@ function cancel () {
           <label for="input-coment" class="form-label">Comentarios</label>
           <textarea
             class="form-control"
-            v-model="task.comment"
+            v-model="formdefault.comment"
             aria-label="Coments"
             placeholder="Escribir comentarios..."
-            :disabled="allowedit"
+            :disabled="!editar"
           ></textarea>
         </div>
 
         <div class="col-12 col-md-6">
           <div class="overflow-hidden" id="image-upload">
-            <!-- id="image-upload" -->
             <label
               for="imagen-input"
               class="botones btn-image"
@@ -156,14 +148,13 @@ function cancel () {
               />
               Subir Imagen
             </label>
-            <!-- id="imagen-label" -->
             <input
               type="file"
               id="imagen-input"
               accept="image/*"
               style="display: none"
               @change="mostrarVistaPrevia"
-              :disabled="allowedit"
+              :disabled="!editar"
             />
           </div>
         </div>
@@ -172,8 +163,8 @@ function cancel () {
             type="button"
             class="botones btn btn-light"
             id="submit-button"
-            v-if= "!mostrarbtn"
-            @click="$emit('ChangeState')"
+            v-if= "!editar"
+            @click="$emit('changestate')"
           >
             Editar
           </button>
@@ -181,7 +172,8 @@ function cancel () {
             type="submit"
             class="botones btn btn-light"
             id="submit-button"
-            v-if="mostrarbtn"
+            v-if="editar"
+            @click="$emit('guardarform')"
           >
             Guardar
           </button>
@@ -189,8 +181,8 @@ function cancel () {
             type="button"
             class="botones btn btn-dark"
             id="cancel-button"
-            @click="$emit('cancelprocess')"
-          ><!-- @click="mostrarFormulario = false" -->
+            @click="$emit('cancelprocess'), resetForm()"
+          >
             Cancelar
           </button>
         </div>
@@ -202,7 +194,7 @@ function cancel () {
 <style scoped>
 .overlay {
   position: absolute;
-  top: -70px;
+  top: 0px;
   left: 0;
   max-width: fit-content;
   height: 100vh;

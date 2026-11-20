@@ -193,7 +193,7 @@ const task = ref({
   border-radius: 11px;
   font-size: 15px;
   /* background-color: rgba(239, 240, 248, 0.25); */
-  border: none;
+  border: none!important;
   box-shadow:
     inset 0 1px 1.5px #ccc,
     inset 0 -1px 1px #aaa;

@@ -28,20 +28,27 @@ function activar() {
 </template>
 
 <style scoped>
+/* *{
+    overflow-x: clip;
+    } */
 .navbar {
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 60px;
-    /* width: 100%; */
+    height: 50px;
+    max-width: 70%;
     position: sticky;
-    top: 0;
+    top: auto;
     background: radial-gradient(
+     circle at 50% 50%,
+    rgba(0, 0, 0, 0.1) 5%,
+    rgba(239, 240, 248, 0.1) 75%
       at 50% 50%,
     rgba(0, 0, 0, 0.1) 45%,
     rgba(239, 240, 248, 0.1) 90%,
     rgba(239, 240, 248, 0.3) 120%
   ) ;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
+    backdrop-filter: blur(10px);
     /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0); */
     box-shadow:/* 
     inset 0 1px 1.5px #ccc, 
@@ -51,7 +58,7 @@ function activar() {
     2px 2px 10px rgba(0, 0, 0, 0.4),
     -2px -2px 8px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(1px);
-    z-index: 1!important;
+    z-index: 999;
     border-radius: 25px;
     padding: 0px 20px;
 }
@@ -60,26 +67,24 @@ function activar() {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     /* padding: 0 2rem; */
     max-width: 1600px;
 }
 
-.navbar-logo {
+/* .navbar-logo {
     font-size: 2rem;
     font-weight: 600;
     color: #fff;
     text-decoration: none;
     cursor: pointer;
 }
-
+ */
 .navbar-container .navbar-menu {
     display: flex;
     text-align: center;
     gap: 1.5rem;
     list-style: none;
 }
-
 .navbar-container .navbar-menu.active {
     display: flex;
 }
@@ -91,6 +96,8 @@ ul {
     text-decoration: none;
     color: #EFF0F8;
     font-size: 1.3rem;
+    font-weight: 500;
+    padding: 3px 20px;
     font-weight: 400;
     padding: 6px 20px;
     border-radius: 20px;
@@ -100,8 +107,8 @@ ul {
 
 .navbar-container .navbar-menu li a:hover,
 .navbar-container .navbar-menu li .active {
-    border: none;
     background: rgba(239, 240, 248, .15);
+    border: none;
     box-shadow: 
     inset 1px 1px 2px rgba(0, 0, 0, 0.1),
     1px 1px 4px rgba(0, 0, 0, 0.4),
@@ -109,9 +116,9 @@ ul {
      inset 0px .2px .2px #ccc, 
   inset 0px -.2px .2px #aaa;
     color: #fff;
-    /* font-weight: 500; */
+    /* font-weight: 500; 
+    border: 2px solid #fff;*/
 }
-
 .navbar-toggle {
     display: none;
     background: transparent;
@@ -119,7 +126,6 @@ ul {
     border: none;
     cursor: pointer;
 }
-
 .navbar-toggle.active .bar:nth-child(2) {
     opacity: 0;
 }
@@ -136,7 +142,7 @@ ul {
     display: block;
     width: 25px;
     height: 3px;
-    margin: 5px auto;
+    margin: 5px auto!important;
     background: #fff;
     transition: all 0.3s ease-in-out;
 }
@@ -145,45 +151,40 @@ ul {
     .navbar {
         backdrop-filter: none;
         align-self: flex-end;
-        margin-right: 30px;
+        background: none;
     }
 
     .navbar-container .navbar-menu {
         display: none;
         flex-direction: column;
         align-items: flex-start;
-        gap: 1.7rem!important;
-        position: absolute;
+        /* gap: 1.7rem!important; */
+        position:absolute;
         height: 100vh;
-        width: 250px;
-        top: -40px;
-        right: -35px;
+        width: 240px;
+        top: -15px;
+        right: -41px;
         padding: 5rem 1.5rem;
         background: linear-gradient(
             to bottom, rgba(12, 17, 50, 0.7), rgba(0, 0, 0, 0.1)
         );
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(10px);
+        TEXT-decoration: none;
+        text-align:  left;
+        
+
     }
 
     .navbar-toggle {
         display: block;
         z-index: 999;
     }
+    li a {
+        color: #eff0f8!important;
+    }
+    .bar {
+        font-weight: 10px;
+    }
 }
-
-/* @media (max-width: 480px) {
-    .navbar-container {
-        padding: 0 1rem;
-    }
-
-    .navbar-logo {
-        font-size: 1.7rem;
-    }
-
-    .navbar-container .navbar-menu {
-        font-size: 1.2rem;
-        padding: 3px 15px;
-    }
-} */
 </style>

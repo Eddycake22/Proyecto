@@ -2,23 +2,29 @@
 import { ref } from 'vue';
 
 const success = ref('75%');
-const danger = ref('25%');
+const danger = ref('30%');
 </script>
 <template>
   <div class="grid stats">
     <div class="TargetA grid" style="--bs-columns:2; --bs-rows: auto;">
       <h3 class="titulo" style="grid-column-start:1; grid-column-end:span2;">Estado General de Asignaciones</h3>
-      <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0"
+     <div class="success bar">
+      <h6>Tareas completadas</h6>
+       <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0"
         aria-valuemax="100" style="height: 40px;">
-        <div class="progress-bar bg-success" style="width: 25%">Tareas completadas 25%</div>
+        <div class="progress-bar bg-success" :style="{ width: danger }">{{ success }}</div>
       </div>
-      <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0"
+     </div>
+     <div class="danger-bar">
+      <h6>Tareas pendientes</h6>
+       <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0"
         aria-valuemax="100" style="height: 40px;">
-        <div class="progress-bar bg-danger" style="width: 75%">Tareas pendientes 75%</div>
+        <div class="progress-bar bg-danger" :style="{ width: success }" >{{ danger }}</div>
       </div>
+     </div>
     </div>
 
-    <div class="TargetB"> <!-- style="--bs-columns:2; --bs-rows: auto;" -->
+    <div class="TargetB"> 
       <div class="encabezado d-flex justify-content-between">
         <h3 class="titulo align-self-center">Estado de Asignaciones por Área</h3> <!-- style="--bs-rows-end:2;"-->
         <div class="select fw-medium">
@@ -29,13 +35,19 @@ const danger = ref('25%');
           </select>
         </div>
       </div>
+      <div class="success-bar">
+        <h6>Tareas completadas</h6>
       <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0"
         aria-valuemax="100" style="height: 40px;">
-        <div class="progress-bar bg-success" style="width: 75%;">Tareas completada 75%</div>
+        <div class="progress-bar bg-success" :style="{ width: success }">{{ success }}</div>
       </div>
-      <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0"
-        aria-valuemax="100" style="height: 40px; grid-row-start: 3;"><p>Tareas pendientes {{ danger }}</p> ``
-        <div class="progress-bar bg-danger" style="width: v-bind(danger)"></div>
+      </div>
+      <div class="danger-bar">
+        <h6>Tareas pendientes</h6>
+        <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0"
+        aria-valuemax="100" style="height: 40px; grid-row-start: 3;">
+        <div class="progress-bar bg-danger"  :style="{ width: danger }">{{ danger }}</div>
+      </div>
       </div>
     </div>
   </div>
@@ -57,13 +69,7 @@ const danger = ref('25%');
   border-radius: 25px;
 }
 
-.TargetA {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.TargetB {
+.TargetA, .TargetB {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -72,12 +78,13 @@ const danger = ref('25%');
 .progress-bar {
   font-size: 14px;
 }
-
-h3 {
+h3{
   display: inline-block;
   margin: 0px !important;
 }
-
+h6{
+  margin-bottom: 10px;
+}
 .progress {
   border-radius: 20px !important;
   position: relative;
@@ -100,6 +107,9 @@ p {
 }
 .bg-danger {
   --bs-danger-rgb:255, 101, 101;
+  border-radius: 25px 0px 0px 25px;
+    position: relative;
+    right: 20px;
 }
 select {
   appearance: none;
@@ -113,7 +123,6 @@ select {
   }
 
   z-index: 10;
-  /* max-width: 150px; */
   height: 30px;
   display: flex;
   justify-content: space-between;
@@ -166,7 +175,6 @@ select {
       color: white;
       background: #323652;
       padding: 5px;
-      /* border-top: 1px solid #333d81; */
       cursor: pointer;
       transition-property: color, background;
       transition-duration: 0.1s;

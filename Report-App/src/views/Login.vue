@@ -1,63 +1,73 @@
 <script setup>
+import { RouterLink} from 'vue-router';
 </script>
 
 <template>
-    <html lang="es">
-    <head>
-    </head>
-    <body class="text-light">
-    <div class="Formulario">
-        <h1>Iniciar Sesión</h1>
+    <div class="Background">
+        <div class="Formulario text-light">
+        <h1 class="m-0">Iniciar Sesión</h1>
         <form @submit.prevent="handleLogin" class="formulario">
-        <div class="form-group">
+        <div class="form-group mt-3">
             <label for="username">Usuario o correo electrónico:</label>
             <input type="text" id="username" v-model="username" required placeholder="Escribir..." />
         </div>
-        <div class="form-group">    
+        <div class="form-group my-2">    
             <label for="password">Contraseña:</label>
             <input type="password" id="password" v-model="password" required placeholder="Escribir contraseña..."/>
         </div>
         </form>
-          <button type="button" class="btn btn-light">Iniciar Sesión</button>
-          <p>¿No tienes cuenta? <a href="/register" @click="goToRegister">Regístrate aquí</a></p>
+        <RouterLink class="btn btn-light my-3" to="/inicio">Iniciar Sesión</RouterLink>  
+          <!-- <p>¿No tienes cuenta? <a href="/register" @click="goToRegister">Regístrate aquí</a></p> -->
     </div>
-    </body>
-    </html>
+    </div>
 </template>
 
 <style scoped>
-html{
-    /*background-color: #0C1132;*/
+.Background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+   background-image: url('../assets/Images\Background.jpg');  
+    background-repeat: no-repeat;       
+    background-position: center;        
+    background-size: cover;             
+    background-attachment: fixed;
 }
-body {  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    background-color: #0C1132!important;
-}
-
 div.Formulario {
     display: flex;
     width: 450px;
     padding:40px;
     flex-direction: column;
-    border: 1px solid #ccc;
+    justify-content: center;
+    border: none;
     border-radius: 10px;
+    /* background: rgba(12, 17, 50, 0.1); */
+    background: rgba(217, 217, 217, 0.08);
+    box-shadow:
+    inset 1px 1px 5px rgba(255, 255, 255, 0.2), 
+    inset 1px 1px 5px rgba(0, 0, 0, 0.1),
+    inset 0 1px 1.5px #ccc,
+    inset 0 -1px 1px #aaa;;
+    backdrop-filter: blur(1px);
 }
 h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 0px;
 }
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
 }
 input {
     padding: 8px;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     margin-top: 8px;
     font-size: 14px;
 }
@@ -70,5 +80,18 @@ p {
     font-size: 14px;
 }
 
-
+label {
+    font-size: 16px;
+}
+.btn.btn-light {
+    font-family: 'Roboto', sans-serif!important;
+    border-radius: 10px;
+    color: #0C1132!important;
+    font-size:16px ;
+    /* width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center; */
+}
 </style>

@@ -1,5 +1,6 @@
 <template>
-    <div class="grid" style="--bs-columns: 4; --bs-row: 4">
+  <Header/>
+    <div class="grid mt-5" style="--bs-columns: 4; --bs-row: 4">
        <create_report/><Order_button/>
       <section class="" id="Tareas" style="grid-row: 3; grid-column: span 3">
         <Task_Target />
@@ -63,7 +64,7 @@ h1 {
 }
 </style>
 <script setup>
-
+import Header from '@/components/Header.vue'
 import create_report from "../components/create_report.vue";
 import Task_Target from "../components/Task_Target.vue";
 import Order_button from "../components/Order_button.vue";

@@ -1,24 +1,20 @@
 @import url('https://googleapis.com');
 
 * {
-    margin:0;
+    margin:0!important;
     padding: 0;
     box-sizing: border-box;
 }
 html {
-    /*background-color: #0C1132;*/
-    
+    /*background-color: #0C1132;*/   
 }
 body {
     width: 100dvw;
     min-height: 100dvh;
-    /* margin: 40px 0px 0px 0px!important; */
     padding: 0;
-     /* background-color: #EFF0F8!important; */
-     margin: 40px 0 0 0!important;
+     margin: 20px 0 0 0!important;
      display: flex;
      flex-direction: column;  
-    
      align-items: center; 
      gap: 20px;
     background-image: url('../assets/Images\Background.svg');  
@@ -38,7 +34,13 @@ h1, h2, h3, h4, a{
 p, div, label, input, select, textarea, button {
     font-family: 'Roboto', sans-serif!important;
 }
-
+div {
+    display: flex;
+     flex-direction: column;  
+     align-items: center;
+}
 @media (max-width: 768px) {
-    
+  /* *{
+    overflow-x: hidden!important;
+    } */
 }

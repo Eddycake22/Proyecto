@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router';
+
 const navbarToggle = ref(null);
 const navbarMenu = ref(null)
 
@@ -19,8 +21,9 @@ function activar() {
                 <span class="bar"></span>
             </button>
             <ul class="navbar-menu" ref="navbarMenu">
-                <li><a href="">Administrar usuarios</a></li>
-                <li><a href="">Asignaciones</a></li>
+                <RouterLink><li><a href="">Administrar usuarios</a></li></RouterLink>
+                <RouterLink><li><a href="">Asignaciones</a></li></RouterLink>
+                
             </ul>
         </div>
     </nav>
