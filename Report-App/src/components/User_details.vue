@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import AdminTask_target from '../components/AdminTask_target.vue';
+import admin_tasktarget from '../components/admin_tasktarget.vue';
 import Stats from '../components/Stats.vue';
 import {reactive} from 'vue';
 
@@ -154,17 +154,20 @@ function resetForm() {
       </section>
       <section>
         <h3 class="my-4">Asignaciones</h3>
-        <AdminTask_target />
+        <admin_tasktarget class="component" />
       </section>
       <section>
         <h3 class="my-4">Estadísticas</h3>
-        <Stats/>
+        <Stats class="component"/>
       </section>
     </div>
   </div>
 </template>
 
 <style scoped>
+.component {
+ width: 100%;;
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -219,6 +222,7 @@ function resetForm() {
   border-radius: 15px;
   /* position: relative;
   top: 20%; */
+  overflow-x:clip!important;
   overflow-y: auto;
   scrollbar-width: none;
   max-height: 80vh;
@@ -365,7 +369,6 @@ select {
     width: 90%;
     margin: 0px 40px 0px 40px;
     padding: 20px 35px;
-    overflow-x: none!important;
     display: flex;
     flex-direction: column;
     /* grid-template-columns: 1fr auto auto!important; */

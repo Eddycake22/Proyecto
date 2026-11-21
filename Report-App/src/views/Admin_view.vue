@@ -1,9 +1,12 @@
-<script setup>
-import AdminHeader from '@/components/AdminHeader.vue';
-import { RouterView } from 'vue-router';
-</script>
 <template>
-    <AdminHeader/>
-    
-    <RouterView></RouterView>
+  <Adminheader class="mb-5"/>
+  <RouterView></RouterView>
 </template>
+
+<style>
+</style>
+
+<script setup>
+import { RouterView } from 'vue-router';
+import Adminheader from '../components/admin_header.vue'
+</script>

@@ -194,7 +194,7 @@ function resetForm() {
 <style scoped>
 .overlay {
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 0;
   max-width: fit-content;
   height: 100vh;

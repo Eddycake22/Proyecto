@@ -1,17 +1,22 @@
 <script setup>
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router';
+
 const navbarToggle = ref(null);
 const navbarMenu = ref(null)
+const nav_layer = ref(null)
 
 function activar() {
     navbarToggle.value.classList.toggle('active');
     navbarMenu.value.classList.toggle('active');
+    nav_layer.value.classList.toggle('act');
 }
 </script>
 
 <template>
-    <nav class="navbar">
-        <div class="navbar-container">
+        <nav class="navbar">
+            <div class="nav-layer" ref="nav_layer">
+                <div class="navbar-container">
             <!-- <a href="" class="navbar-logo">CCSnippets</a> -->
             <button ref="navbarToggle" class="navbar-toggle" @click="activar">
                 <span class="bar"></span>
@@ -19,40 +24,46 @@ function activar() {
                 <span class="bar"></span>
             </button>
             <ul class="navbar-menu" ref="navbarMenu">
-                <li><a href="">Áreas</a></li>
-                <li><a href="" class="active">Asignaciones</a></li>
-                <li><a href="">Estadísticas</a></li>
+                <RouterLink to="/Areas" exact-active-class="activ">Áreas</RouterLink>
+                <RouterLink to="/inicio" exact-active-class="activ">Asignaciones</RouterLink>
+                <RouterLink to="/Estadisticas" exact-active-class="activ">Estadísticas</RouterLink>
             </ul>
         </div>
+            </div>
     </nav>
 </template>
 
 <style scoped>
-/* *{
-    overflow-x: clip;
-    } */
+*{
+    scrollbar-width: none!important;
+    /* border: 1px solid red; */
+    }
+    .nav-layer {
+        display: flex;
+    justify-content: center;
+    background-color: transparent;
+}
+
+/* :deep(a) {
+  text-decoration: none;
+}
+ */
 .navbar {
     display: flex;
     justify-content: center;
+    justify-self: center;
     height: 50px;
-    max-width: 70%;
     position: sticky;
     top: auto;
     background: radial-gradient(
      circle at 50% 50%,
     rgba(0, 0, 0, 0.1) 5%,
     rgba(239, 240, 248, 0.1) 75%
-      at 50% 50%,
-    rgba(0, 0, 0, 0.1) 45%,
-    rgba(239, 240, 248, 0.1) 90%,
-    rgba(239, 240, 248, 0.3) 120%
   ) ;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
-    backdrop-filter: blur(10px);
-    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0); */
-    box-shadow:/* 
-    inset 0 1px 1.5px #ccc, 
-  inset 0 -1px 1px #aaa, */
+    /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
+    << inset 0 1px 1.5px #ccc, inset 0 -1px 1px #aaa, >>
+    */
+    box-shadow: 
     inset 1px 1px 5px rgba(255, 255, 255, 0.2), 
     inset 1px 1px 5px rgba(0, 0, 0, 0.1),
     2px 2px 10px rgba(0, 0, 0, 0.4),
@@ -87,37 +98,39 @@ function activar() {
 }
 .navbar-container .navbar-menu.active {
     display: flex;
+    
 }
 ul {
     margin: 0px;
     padding:0px;
 }
-.navbar-container .navbar-menu li a {
+.navbar-container .router-link-active, a{
     text-decoration: none;
     color: #EFF0F8;
-    font-size: 1.3rem;
+    font-size: 1.3rem!important;
     font-weight: 500;
-    padding: 3px 20px;
-    font-weight: 400;
-    padding: 6px 20px;
+    padding: 3px 15px;
     border-radius: 20px;
     /* border: 2px solid transparent; */
     transition: nowrap;
 }
 
-.navbar-container .navbar-menu li a:hover,
-.navbar-container .navbar-menu li .active {
-    background: rgba(239, 240, 248, .15);
+/* .navbar-container .navbar-menu li a:hover, */
+/* .navbar-container .navbar-menu li .active, */ .activ {
+    background: radial-gradient(
+    at 50% 50%,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(239, 240, 248, 0.1) 75%
+  );
     border: none;
-    box-shadow: 
+    color: #fff;
+     box-shadow: 
     inset 1px 1px 2px rgba(0, 0, 0, 0.1),
     1px 1px 4px rgba(0, 0, 0, 0.4),
     -1px -1px 4px rgba(255, 255, 255, 0.1),
      inset 0px .2px .2px #ccc, 
   inset 0px -.2px .2px #aaa;
     color: #fff;
-    /* font-weight: 500; 
-    border: 2px solid #fff;*/
 }
 .navbar-toggle {
     display: none;
@@ -125,6 +138,11 @@ ul {
     padding: 10px;
     border: none;
     cursor: pointer;
+}
+.navbar-toggle.active{
+position:fixed;
+        top: 20px;
+        right: 75px;
 }
 .navbar-toggle.active .bar:nth-child(2) {
     opacity: 0;
@@ -146,12 +164,29 @@ ul {
     background: #fff;
     transition: all 0.3s ease-in-out;
 }
-
 @media (max-width:880px) {
+    .act {
+    /* align-items: flex-end; */
+    display:block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 995;
+    background-color: rgba(2, 10, 36, 0.6)!important;
+    /* 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     */
+} 
     .navbar {
         backdrop-filter: none;
         align-self: flex-end;
-        background: none;
+        justify-self: flex-end;
+        padding: 0 30px 0 30px;
     }
 
     .navbar-container .navbar-menu {
@@ -161,9 +196,9 @@ ul {
         /* gap: 1.7rem!important; */
         position:absolute;
         height: 100vh;
-        width: 240px;
-        top: -15px;
-        right: -41px;
+        width: 270px;
+        top: 0px;
+        right: 0px;
         padding: 5rem 1.5rem;
         background: linear-gradient(
             to bottom, rgba(12, 17, 50, 0.7), rgba(0, 0, 0, 0.1)
@@ -178,7 +213,11 @@ ul {
 
     .navbar-toggle {
         display: block;
+        /* background-color: #EFF0F8!important; */
         z-index: 999;
+        position:fixed;
+        top: 20px;
+        right: 50px;
     }
     li a {
         color: #eff0f8!important;

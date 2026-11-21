@@ -1,9 +1,8 @@
 <template>
-  <Header/>
-    <div class="grid mt-5" style="--bs-columns: 4; --bs-row: 4">
-       <create_report/><Order_button/>
+    <div class="grid" style="--bs-columns: 4; --bs-row: 4">
+       <create_report/><orderbutton/>
       <section class="" id="Tareas" style="grid-row: 3; grid-column: span 3">
-        <Task_Target />
+        <task_target />
       </section>
     </div>
 </template>
@@ -45,10 +44,6 @@ h1 {
     /*grid-template-columns: repeat(auto, minmax(250px, 1fr)); 
         grid-template-rows: repeat(auto);*/
   }
-  .select {
-    /* grid-area: 3 / span 4; 
-    grid-column-start: 2;*/
-  }
   #open-form {
     grid-row-start: 1;
     grid-column-start:1;
@@ -64,8 +59,7 @@ h1 {
 }
 </style>
 <script setup>
-import Header from '@/components/Header.vue'
 import create_report from "../components/create_report.vue";
-import Task_Target from "../components/Task_Target.vue";
-import Order_button from "../components/Order_button.vue";
+import task_target from "../components/task_target.vue";
+import orderbutton from "../components/orderbutton.vue";
 </script>

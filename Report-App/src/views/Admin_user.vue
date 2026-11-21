@@ -9,7 +9,7 @@
 
 <style scoped>
 .grid {
-  width: 80%;
+  width: 80vw;
   grid-template-columns: 1fr auto auto;
   display: grid;
   grid-auto-rows: min-content;
@@ -61,6 +61,6 @@ h1 {
 <script setup>
 
 import create_user from "../components/create_user.vue";
-import User_Target from "../components/User_Target.vue";
+import User_Target from "../components/user_target.vue";
 
 </script>

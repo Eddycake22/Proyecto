@@ -1,13 +1,38 @@
 <template>
+    <div class="task-container">
+        <div class="act-task shadow-sm" style="--bs-rows:3; --bs-columns:3">
+        <h4 class="mt-1" id="report-name">Nombre de usuario</h4>
+        <p id="status" style="grid-row:2">Rol: </p>
+        <user_details />
+    </div>
     <div class="act-task shadow-sm" style="--bs-rows:3; --bs-columns:3; column-gap:1rem;">
         <h4 class="mt-1" id="report-name">Nombre de usuario</h4>
         <p id="status" style="grid-row:2">Rol: </p>
-        <User_details />
-        
+        <user_details />
+    </div>
+    <div class="act-task shadow-sm" style="--bs-rows:3; --bs-columns:3; column-gap:1rem;">
+        <h4 class="mt-1" id="report-name">Nombre de usuario</h4>
+        <p id="status" style="grid-row:2">Rol: </p>
+        <user_details />
+    </div>
+    <div class="act-task shadow-sm" style="--bs-rows:3; --bs-columns:3; column-gap:1rem;">
+        <h4 class="mt-1" id="report-name">Nombre de usuario</h4>
+        <p id="status" style="grid-row:2">Rol: </p>
+        <user_details />
+    </div>
     </div>
 </template>
 
 <style scoped>
+.task-container {
+    /* display: grid;
+    grid-template-columns: 1;
+    row-gap: 20px; */
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 30px;
+}
 .act-task {
     display: grid;
     width: auto!important;
@@ -62,6 +87,6 @@ h4 {
 }
 </style>
 <script setup>
-import User_details from './User_details.vue';
+import user_details from './user_details.vue';
 
 </script>

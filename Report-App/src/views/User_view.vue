@@ -1,14 +1,13 @@
 <script setup>
-import Header from '@/components/Header.vue';
 import { RouterView } from 'vue-router';
+import Header from '@/components/header.vue';
 </script>
 <template>
-    <body>
-        <teleport to="body"><Header/></teleport>
+    <Header class="mb-5"/>
         
     
     <RouterView></RouterView>
-    </body>
+    
     
 </template>
 <style scoped>

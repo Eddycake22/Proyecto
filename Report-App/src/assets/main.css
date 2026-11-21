@@ -1,16 +1,17 @@
 @import url('https://googleapis.com');
 
 * {
-    margin:0!important;
+    /* margin:0!important; */
     padding: 0;
     box-sizing: border-box;
+    /* border: 1px solid red; */
 }
 html {
     /*background-color: #0C1132;*/   
 }
 body {
-    width: 100dvw;
-    min-height: 100dvh;
+    width: 100%;
+    min-height: 90dvh;
     padding: 0;
      margin: 20px 0 0 0!important;
      display: flex;
@@ -23,7 +24,20 @@ body {
     background-size: cover;             
     background-attachment: fixed;     
     overflow-x: clip!important; 
-    overflow-y: clip!important;
+    overflow-y: auto;
+    /* scrollbar-width: hidden; */
+
+    &::-webkit-scrollbar {
+    width: 5px;
+    background: rgb(12, 17, 50, 1);
+}
+    &::-webkit-scrollbar-thumb{
+        background: #EFF0F8;
+        border-radius: 15px;
+    }
+    &:has(.overlay) {
+  overflow: hidden;
+}
 }
 
 h1, h2, h3, h4, a{
@@ -34,11 +48,12 @@ h1, h2, h3, h4, a{
 p, div, label, input, select, textarea, button {
     font-family: 'Roboto', sans-serif!important;
 }
+/* afecta lo posicion de formularios y la posicion del .navbar 
 div {
     display: flex;
      flex-direction: column;  
      align-items: center;
-}
+} */
 @media (max-width: 768px) {
   /* *{
     overflow-x: hidden!important;

@@ -81,7 +81,7 @@ function resetForm() {
             <option value="3">Visita</option>
           </select>
         </div>
-
+        
         <div class="col-12 col-md-6 d-flex justify-content-md-end justify-content-between align-items-end">
           <button type="submit" class="botones btn btn-light" id="submit-button">
             Guardar
@@ -108,6 +108,7 @@ function resetForm() {
   justify-content: center;
   align-items: center;
   z-index: 999;
+  overflow-y: clip!important;
   /* Asegura que esté por encima de todo */
 }
 
@@ -161,19 +162,6 @@ textarea {
   background-color: #eff0f8;
 }
 
-#image-label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* margin: 0px 7px; */
-  background-color: #0c1132;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#image-label:hover,
 #cancel-button:hover {
   background-color: #171f52;
 }
@@ -189,12 +177,6 @@ textarea {
   background-color: #0c1132;
   margin-left: 14px;
 
-}
-
-img {
-  width: 150px;
-  height: auto;
-  object-fit: cover;
 }
 
 select {

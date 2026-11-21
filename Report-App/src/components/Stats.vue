@@ -57,6 +57,7 @@ const danger = ref('30%');
 .stats {
   display: grid;
   row-gap: 30px;
+  width: 80vw;
   color: #0C1132;
 
 }
@@ -121,7 +122,7 @@ select {
       appearance: base-select;
     }
   }
-
+  font-size: 16px!important;
   z-index: 10;
   height: 30px;
   display: flex;
@@ -206,9 +207,13 @@ select {
 }
 
 @media (max-width: 768px) {
+  .stats{
+    min-width: 85%;
+  }
   .TargetA,
 .TargetB {
   padding: 25px;
+  /* min-width: 85% !important; */
 }
   .progress{
     height: 30px!important;

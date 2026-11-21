@@ -24,8 +24,6 @@ const guardarform = () => {
   mostrarFormulario.value = false; // Cierra el formulario tras enviar
 };
 
-import axios from "axios";
-
 const task = ref({
   name: "",
   device: "",
@@ -57,7 +55,7 @@ const task = ref({
         <h3 class="mb-2">Hacer Reporte</h3>
       </div>
 
-      <form class="row g-3" form @submit.prevent="guardarform">
+      <form class="row" form @submit.prevent="guardarform">
         <div class="col-md-6">
           <label for="name" class="form-label">Nombre de la asignación</label>
           <input
@@ -89,7 +87,7 @@ const task = ref({
           />
         </div>
 
-        <div class="select col-6">
+        <div class="select col-md-6">
           <label class="form-label">Tipo de placa</label>
           <select
             class="form-select"
@@ -103,7 +101,7 @@ const task = ref({
           </select>
         </div>
 
-        <div class="col-6">
+        <div class="col-md-6">
           <label for="Active" class="form-label">Activo</label>
           <input
             type="text"
@@ -123,7 +121,7 @@ const task = ref({
           ></textarea>
         </div>
 
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 mt-3">
           <div class="overflow-hidden" id="image-upload">
             <!-- id="image-upload" -->
             <label
@@ -149,10 +147,10 @@ const task = ref({
             />
           </div>
         </div>
-        <div class="col-12 col-md-6 d-flex justify-content-end">
+        <div class="col-12 col-md-6 d-flex justify-content-md-end align-items-end justify-content-between mt-3 mt-md-0">
           <button
             type="submit"
-            class="botones btn btn-light"
+            class="botones btn btn-light mx-0 mx-md-3"
             id="submit-button"
           >
             Enviar
@@ -189,6 +187,7 @@ const task = ref({
 
 #open-form {
   width: 20%;
+  height: 45px;
   padding: 5px 10px;
   border-radius: 11px;
   font-size: 15px;
@@ -203,11 +202,11 @@ const task = ref({
     2px 2px 10px rgba(0, 0, 0, 0.4),
     -2px -2px 8px rgba(255, 255, 255, 0.1); */
   user-select: none;
-  background: radial-gradient(
-    at 50% 50%,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(239, 240, 248, 0.1) 75%
-  );
+    background: radial-gradient(
+      at 50% 50%,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(239, 240, 248, 0.1) 75%
+    );
   transition-property: all;
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
@@ -233,8 +232,11 @@ const task = ref({
   backdrop-filter: blur(10px);
   padding: 20px 35px;
   border-radius: 15px;
-  backdrop-filter: blur(10px);
   /* grid-template-columns: 1fr auto auto!important; */
+}
+
+.row {
+    --bs-gutter-y: .5rem;
 }
 
 input,
@@ -253,20 +255,9 @@ textarea {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+   height: 40px;
 }
 
-/* 
-#image-upload {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #0c1132;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-   
-} */
 #image-label:hover,
 #cancel-button:hover {
   background-color: #171f52;
@@ -283,12 +274,11 @@ textarea {
 
 #cancel-button {
   background-color: #0c1132;
-  margin-left: 14px;
 }
 
 img {
   width: 150px;
-  height: auto;
+  height:40px;
   object-fit: cover;
 }
 
@@ -392,7 +382,6 @@ select {
     height: 45px;
     width: 120px;
   }
-
   /* button {
     height: 35px;
     width: 40px;

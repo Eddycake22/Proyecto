@@ -28,6 +28,7 @@ import axios from "axios";
 
 const task = ref({
   name: "",
+  tec: "#",
   device: "",
   brand: "",
   board: "#",
@@ -68,6 +69,20 @@ const task = ref({
             placeholder="Escribir el nombre de la asignación"
 
           />
+        </div>
+
+        <div class="select col-12 col-md-6">
+          <label class="form-label">Nombre del Técnico</label>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            v-model="task.tec"
+          >
+            <option value="#">Seleccionar...</option>
+            <option value="1">Técnico 1</option>
+            <option value="2">Técnico 2</option>
+            <option value="3">Técnico 3</option>
+          </select>
         </div>
 
         <div class="col-md-6">
@@ -114,7 +129,7 @@ const task = ref({
           />
         </div>
 
-        <div class="select col-6">
+        <div class="select col-12 col-md-6">
           <label class="form-label">Agregar campo</label>
           <select
             class="form-select"
@@ -138,7 +153,7 @@ const task = ref({
           ></textarea>
         </div>
 
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 mt-3">
           <div class="overflow-hidden" id="image-upload">
             <!-- id="image-upload" -->
             <label
@@ -164,10 +179,10 @@ const task = ref({
             />
           </div>
         </div>
-        <div class="col-12 col-md-6 d-flex justify-content-end">
+        <div class="col-12 col-md-6 d-flex justify-content-md-end align-items-end justify-content-between mt-3 mt-md-0">
           <button
             type="submit"
-            class="botones btn btn-light"
+            class="botones btn btn-light mx-0 mx-md-3"
             id="submit-button"
           >
             Enviar
@@ -199,6 +214,7 @@ const task = ref({
   justify-content: center;
   align-items: center;
   z-index: 999;
+  overflow-y: clip!important;
   /* Asegura que esté por encima de todo */
 }
 
@@ -248,10 +264,12 @@ const task = ref({
   backdrop-filter: blur(10px);
   padding: 20px 35px;
   border-radius: 15px;
-  backdrop-filter: blur(10px);
   /* grid-template-columns: 1fr auto auto!important; */
 }
 
+.row {
+    --bs-gutter-y: .5rem;
+}
 input,
 select,
 textarea {
@@ -268,20 +286,9 @@ textarea {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  height: 40px;
 }
 
-/* 
-#image-upload {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #0c1132;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-   
-} */
 #image-label:hover,
 #cancel-button:hover {
   background-color: #171f52;
@@ -298,12 +305,11 @@ textarea {
 
 #cancel-button {
   background-color: #0c1132;
-  margin-left: 14px;
 }
 
 img {
   width: 150px;
-  height: auto;
+  height: 40px;
   object-fit: cover;
 }
 

@@ -3,8 +3,7 @@
         <h4 class="mt-1" id="report-name">Nombre de la asignación</h4>
         <p id="status" style="grid-row:2">Estado: </p>
         <p class="d-flex align-items-center " id="Desc" style="grid-row:3;">Descripcion:</p>
-        <!-- <button class="btn btn-secondary" style="grid-row:3; grid-column:2;" type="button" id="details-btn">Detalles</button> -->
-        <Report_details />
+        <report_details />
         <button class="btn btn-primary" style="grid-row:3; grid-column:3;" type="button" id="complete-btn">Completar</button>
     </div>
 </template>
@@ -45,7 +44,7 @@ p {
     }
 
     h4 {
-        font-size: 14px;
+        font-size: 18px;
         grid-column: span 4;
     }
     p {
@@ -70,6 +69,5 @@ p {
 }
 </style>
 <script setup>
-import Report_details from './Report_details.vue';
-
+import report_details from './report_details.vue'
 </script>

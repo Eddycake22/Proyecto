@@ -1,89 +1,126 @@
 <template>
-    <div class="grid" style="--bs-columns:2; row-gap:1.5rem;  column-gap:1.5rem;"> <!--  -->
-        <div class="Target Area-info" style="grid-row:1span;">
-        <h3>Nombre del Área: {{ area_name }}</h3>
-        <button class="btn btn-secondary" type="button" @click="mostrarFormulario = true"> Detalles</button>
-        <!-- <text>Descripcion{{ descripcion }}</text> -->
+  <div class="grid" style="--bs-columns: 2; row-gap: 2rem; column-gap: 3rem">
+    <!--  -->
+    <div class="Target row m-0">
+      <h3 class="col-9">Nombre del Área: {{ area_name }}</h3>
+      <div class="col-md-3 col-12">
+        <button
+          class="btn btn-secondary"
+          type="button"
+          @click="mostrarFormulario = true"
+        >
+          Detalles
+        </button>
+      </div>
+    </div>
+    <div class="Target row m-0">
+        <h3 class="col-9">Nombre del Área: {{ area_name }}</h3>
+        <div class="col-md-3 col-12">
+            <button class="btn btn-secondary" type="button" @click="mostrarFormulario = true"> Detalles</button>
         </div>
-        <div class="Target Area-info">
-        <h3>Nombre del Área: {{ area_name }}</h3>
-        <button class="btn btn-secondary" type="button" @click="mostrarFormulario = true"> Detalles</button>
-        <!-- <text>Descripcion{{ descripcion }}</text> -->
+    </div>
+    <div class="Target row m-0">
+        <h3 class="col-9">Nombre del Área: {{ area_name }}</h3>
+        <div class="col-md-3 col-12">
+            <button class="btn btn-secondary" type="button" @click="mostrarFormulario = true"> Detalles</button>
         </div>
-        <div class="Target Area-info">
-        <h3>Nombre del Área: {{ area_name }}</h3>
-        <button class="btn btn-secondary" type="button" @click="mostrarFormulario = true"> Detalles</button>
-        <!-- <text>Descripcion{{ descripcion }}</text> -->
         </div>
-        <div class="Target Area-info">
-        <h3>Nombre del Área: {{ area_name }}</h3>
-        <button class="btn btn-secondary" type="button" @click="mostrarFormulario = true"> Detalles</button>
-        <!-- <text>Descripcion{{ descripcion }}</text> -->
+        <div class="Target row m-0">
+        <h3 class="col-9">Nombre del Área: {{ area_name }}</h3>
+        <div class="col-md-3 col-12">
+            <button class="btn btn-secondary" type="button" @click="mostrarFormulario = true"> Detalles</button>
         </div>
-        <div class="Target Area-info">
-        <h3>Nombre del Área: {{ area_name }}</h3>
-        <button class="btn btn-secondary" type="button" @click="mostrarFormulario = true"> Detalles</button>
-        <!-- <text>Descripcion{{ descripcion }}</text> -->
         </div>
-        <div class="Target Area-info">
-        <h3>Nombre del Área: {{ area_name }}</h3>
-        <button class="btn btn-secondary" type="button" @click="mostrarFormulario = true"> Detalles</button>
-        <!-- <text>Descripcion{{ descripcion }}</text> -->
+        <div class="Target row m-0">
+        <h3 class="col-9">Nombre del Área: {{ area_name }}</h3>
+        <div class="col-md-3 col-12">
+            <button class="btn btn-secondary" type="button" @click="mostrarFormulario = true"> Detalles</button>
         </div>
-        
-</div>
+        </div>
+        <div class="Target row m-0">
+        <h3 class="col-9">Nombre del Área: {{ area_name }}</h3>
+        <div class="col-md-3 col-12">
+            <button class="btn btn-secondary" type="button" @click="mostrarFormulario = true"> Detalles</button>
+        </div>
+        </div>
+  </div>
 </template>
 
 <style scoped>
-    .grid {
-        min-width: 60%;
-        display:grid;
-        grid-auto-rows: min-content;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        justify-content: center;
-    }
+.grid {
+  width: 80vw;
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
 
-    .Target {
-        display: inline;
-        background: linear-gradient(
-            to right, #EFF0F8, #0C1132
-        );
-        padding: 15px 50px 15px 15px;
-        border-radius: 25px;
-        width: 100%;
-        height: 200px;
-        cursor: pointer;
-        transition: scale 2s ease-out;
-    }
+.Target {
+  background: linear-gradient(to right, #eff0f8, #0c1132);
+  padding: 20px;
+  border-radius: 25px;
+  width: 100%;
+  height: 200px;
+  cursor: pointer;
+  transition: scale 2s ease-out;
+}
 
-    .Target:hover {
-        transform: scale(1.5rem);
-    }
+.Target:hover {
+  transform: scale(1.5rem);
+}
 
-    h3{
-        font-size: 24px;
-        color: #0C1132;
-    }
+h3 {
+  display: inline-block;
+  font-size: 24px;
+  color: #0c1132;
+}
+.btn {
+  /* 
+        width: auto;+
+        position: relative;
+        left: 55% ;
+        top: 0 */
 
-    
+  border: none;
+  background: radial-gradient(
+    at 50% 50%,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(239, 240, 248, 0.1) 75%
+  );
+  box-shadow:
+    inset 0 1px 1.5px #ccc,
+    inset 0 -1px 1px #aaa;
+  height: min-content;
+}
+
 @media (max-width: 768px) {
-    .grid {
-        min-width: 80%;
-        grid-template-columns: 1fr;
-        grid-auto-rows: 150px;
-    }
-    .Target {
-        height: 150px;
-    } 
+  .grid {
+    min-width: 85%;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 150px;
+  }
+  .Target {
+    padding: px;
+    height: 150px;
+  }
+  div.col-md-3 {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+  .btn {
+    width: 200px;
+  }
+  .row {
+    --bs-gutter-x: 0;
+  }
 }
 </style>
 
 <script setup>
-    defineProps({
-        name: String,
-        descripcion: String
-    });
+defineProps({
+  name: String,
+  descripcion: String,
+});
 </script>
-
-

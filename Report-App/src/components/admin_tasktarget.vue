@@ -11,12 +11,12 @@
     id="details-btn"
     type="button"
     @click="mostrarFormulario = true"
-    style="grid-row:3; grid-column:2;"  
+    style="grid-row:3; grid-column:3;"  
   >
     Detalles
   </button>
     <teleport to="body">
-        <Report_details 
+        <admin_reportdetails 
         :mostrar="mostrarFormulario" 
         :editar = "editar"  
         @changestate="changestate" @cancelprocess="cancelprocess" @guardarform="guardarform"/>
@@ -75,7 +75,7 @@ p {
 }
 </style>
 <script setup>
-import Report_details from './Report_details.vue';
+import admin_reportdetails from './admin_reportdetails.vue';
 import { ref } from 'vue';
 
 const mostrarFormulario = ref(false);
