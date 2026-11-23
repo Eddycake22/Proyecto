@@ -11,11 +11,16 @@ function activar() {
     navbarMenu.value.classList.toggle('active');
     nav_layer.value.classList.toggle('act');
 }
+function desactivar() {
+    navbarToggle.value.classList.remove('active');
+    navbarMenu.value.classList.remove('active');
+    nav_layer.value.classList.remove('act');
+}
 </script>
 
 <template>
         <nav class="navbar">
-            <div class="nav-layer" ref="nav_layer">
+            <div class="nav-layer" ref="nav_layer" @click.self="desactivar()">
                 <div class="navbar-container">
             <!-- <a href="" class="navbar-logo">CCSnippets</a> -->
             <button ref="navbarToggle" class="navbar-toggle" @click="activar">

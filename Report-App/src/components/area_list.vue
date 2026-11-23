@@ -1,3 +1,33 @@
+<script setup>
+import area_details from './area_details.vue';
+import { ref } from 'vue';
+
+defineProps({
+  name: String,
+  descripcion: String,
+});
+
+const mostrarFormulario = ref(false);
+const editar = ref (false);
+
+function cancelprocess () {
+  if (editar.value) {
+    changestate();
+  } else {
+    mostrarFormulario.value = false;
+  };
+};
+
+const guardarform = () => {
+  alert("¡Formulario enviado!");
+  mostrarFormulario.value = false; // Cierra el formulario tras enviar
+  changestate();
+};
+
+function changestate () {
+  editar.value = !editar.value;
+};
+</script>
 <template>
   <div class="grid" style="--bs-columns: 2; row-gap: 2rem; column-gap: 3rem">
     <!--  -->
@@ -11,6 +41,13 @@
         >
           Detalles
         </button>
+        <teleport to="body">
+        <area_details 
+        :mostrar="mostrarFormulario" 
+        :editar = "editar"  
+        @changestate="changestate" @cancelprocess="cancelprocess" @guardarform="guardarform"/>
+    
+    </teleport>
       </div>
     </div>
     <div class="Target row m-0">
@@ -117,10 +154,3 @@ h3 {
   }
 }
 </style>
-
-<script setup>
-defineProps({
-  name: String,
-  descripcion: String,
-});
-</script>

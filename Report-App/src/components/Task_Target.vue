@@ -3,9 +3,24 @@
         <h4 class="mt-1" id="report-name">Nombre de la asignación</h4>
         <p id="status" style="grid-row:2">Estado: </p>
         <p class="d-flex align-items-center " id="Desc" style="grid-row:3;">Descripcion:</p>
-        <report_details />
-        <button class="btn btn-primary" style="grid-row:3; grid-column:3;" type="button" id="complete-btn">Completar</button>
+         <button
+    class="btn btn-secondary"
+    id="details-btn"
+    type="button"
+    @click="mostrarFormulario = true"
+    style="grid-row:3; grid-column:3;"  
+    >
+    Detalles
+    </button>
+    <button class="btn btn-primary" style="grid-row:3; grid-column:3;" type="button" id="complete-btn">Completar</button>
     </div>
+    <teleport to="body">
+        <report_details 
+        :mostrar="mostrarFormulario" 
+        :editar = "editar"  
+        @changestate="changestate" @cancelprocess="cancelprocess" @guardarform="guardarform"/>
+    
+    </teleport>
 </template>
 
 <style scoped>
@@ -70,4 +85,26 @@ p {
 </style>
 <script setup>
 import report_details from './report_details.vue'
+import { ref } from 'vue';
+
+const mostrarFormulario = ref(false);
+const editar = ref (false);
+
+function cancelprocess () {
+  if (editar.value) {
+    changestate();
+  } else {
+    mostrarFormulario.value = false;
+  };
+};
+
+const guardarform = () => {
+  alert("¡Formulario enviado!");
+  mostrarFormulario.value = false; // Cierra el formulario tras enviar
+  changestate();
+};
+
+function changestate () {
+  editar.value = !editar.value;
+};
 </script>

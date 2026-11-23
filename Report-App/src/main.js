@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 
-import User_view from './views/User_view.vue'
+import Admin_view from './views/Admin_view.vue'
 import router from './routes/router.js'
 import axios from 'axios'
 
@@ -12,7 +12,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 
 /* .$ axios = axios ; */
 
-const app = createApp(User_view)
+const app = createApp(Admin_view)
 
 app.use(router)
 app.mount('#app')

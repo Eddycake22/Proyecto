@@ -27,7 +27,7 @@ const emit = defineEmits([
 
 interface Reportform {
     name: string,
-    device: string,
+    descripcion: string,
     brand: string,
     active: number | null,
     board: string,
@@ -36,7 +36,7 @@ interface Reportform {
 
 const inicialform:Reportform={
   name: '',
-  device:'',
+  descripcion:'',
   brand:'',
   active:null,
   board:'#',
@@ -58,12 +58,12 @@ function resetForm() {
   >
     <div class="form-container modal-form" style="--bs-rows: 6">
       <div class="form-hearder">
-        <h3 class="mb-2">Detalles del Reporte</h3>
+        <h3 class="mb-2">Detalles del Área</h3>
       </div>
 
       <form class="row g-3" form @submit.prevent> <!-- ="guardarform" -->
         <div class="col-md-6">
-          <label for="name" class="form-label">Nombre de la asignación</label>
+          <label for="name" class="form-label">Descripcion:</label>
           <input
             type="text"
             class="form-control"
@@ -158,7 +158,7 @@ function resetForm() {
             />
           </div>
         </div>
-        <div class="col-12 col-md-6 d-flex justify-content-end">
+        <div class="col-12 col-md-6 d-flex justify-content-md-end align-items-end justify-content-between mt-3 mt-md-0">
           <button
             type="button"
             class="botones btn btn-light"
@@ -388,7 +388,6 @@ select {
 
 @media (max-width: 768px) {
   .form-container {
-    background: red;
     width: 90%;
     margin: 0px 40px 0px 40px;
     padding: 20px 35px;

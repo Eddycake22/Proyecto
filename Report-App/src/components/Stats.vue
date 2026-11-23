@@ -26,7 +26,7 @@ const danger = ref('30%');
 
     <div class="TargetB"> 
       <div class="encabezado d-flex justify-content-between">
-        <h3 class="titulo align-self-center">Estado de Asignaciones por Área</h3> <!-- style="--bs-rows-end:2;"-->
+        <h3 class="titulo align-self-md-center align-self-flex-start">Estado de Asignaciones por Área</h3> <!-- style="--bs-rows-end:2;"-->
         <div class="select fw-medium">
           <select name="area-select position-area">
             <option value="1" selected>Área 1</option>
