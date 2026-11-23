@@ -8,7 +8,7 @@
     id="details-btn"
     type="button"
     @click="mostrarFormulario = true"
-    style="grid-row:3; grid-column:3;"  
+    style="grid-row:2!important; grid-column:2!important;"  
     >
     Detalles
     </button>
@@ -24,6 +24,9 @@
 </template>
 
 <style scoped>
+.btn.btn-secondary{
+    grid-column-start: 2!important;
+}
 .act-task {
     display: grid;
     width: auto!important;
@@ -84,7 +87,7 @@ p {
 }
 </style>
 <script setup>
-import report_details from './report_details.vue'
+import report_details from './Report_details.vue'
 import { ref } from 'vue';
 
 const mostrarFormulario = ref(false);
