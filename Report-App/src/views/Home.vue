@@ -1,3 +1,11 @@
+<script setup>
+import Barra_Lateral from "../components/Barra_Lateral.vue";
+import Prueba_form from "../components/Prueba_form.vue";
+import Task_Target from "../components/Task_Target.vue";
+import Order_button from "../components/Order_button.vue";
+</script>
+
+
 <template>
   <body>
     <Barra_Lateral />
@@ -56,18 +64,12 @@ h1 {
     margin: 0px 25px;
     row-gap: 1rem !important;
     column-gap: 0px !important;
-    /*grid-template-columns: repeat(auto, minmax(250px, 1fr)); 
-        grid-template-rows: repeat(auto);*/
-  }
-  #titulo {
-    /* grid-column: span 1; */
   }
   .mb-5 {
     margin-bottom: 0px !important;
     border-radius: 5px;
   }
   .select {
-    /* grid-area: 3 / span 4; */
     grid-row-start: 3;
   }
   h1 {
@@ -83,10 +85,3 @@ h1 {
   }
 }
 </style>
-
-<script setup>
-import Barra_Lateral from "../components/Barra_Lateral.vue";
-import Prueba_form from "../components/Prueba_form.vue";
-import Task_Target from "../components/Task_Target.vue";
-import Order_button from "../components/Order_button.vue";
-</script>
