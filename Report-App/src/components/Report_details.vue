@@ -27,7 +27,7 @@ const emit = defineEmits([
 
 interface Reportform {
     name: string,
-    descripcion: string,
+    device: string,
     brand: string,
     active: number | null,
     board: string,
@@ -36,7 +36,7 @@ interface Reportform {
 
 const inicialform:Reportform={
   name: '',
-  descripcion:'',
+  device:'',
   brand:'',
   active:null,
   board:'#',
@@ -58,7 +58,7 @@ function resetForm() {
   >
     <div class="form-container modal-form" style="--bs-rows: 6">
       <div class="form-hearder">
-        <h3 class="mb-2">Detalles del Área</h3>
+        <h3 class="mb-2">Detalles del Reporte</h3>
       </div>
 
       <form class="row g-3" form @submit.prevent> <!-- ="guardarform" -->

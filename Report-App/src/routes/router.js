@@ -18,6 +18,9 @@ const router = createRouter ({
         {
             path:'/Inicio',
             component:Asignaciones
+            meta:{
+                requiresAuth:true
+            }
         },
         {
             path:'/Areas',
@@ -26,14 +29,23 @@ const router = createRouter ({
         {
             path:'/Estadisticas',
             component:Estadisticas
+            meta:{
+                requiresAuth:true
+            }
         },
         {
             path:'/Asignaciones',
             component:Adminasignaciones
+            meta:{
+                requiresAuth:true
+            }
         },
         {
             path:'/Usuarios',
             component:Usuarios
+            meta:{
+                requiresAuth:true
+            }
         }
     ]
 })

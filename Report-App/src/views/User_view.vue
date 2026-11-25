@@ -10,10 +10,3 @@ import Header from '@/components/header.vue';
     
     
 </template>
-<style scoped>
-/* body {
-    display: flex;
-     flex-direction: column;  
-     align-items: center!important; 
-} */
-</style>

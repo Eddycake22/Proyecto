@@ -1,11 +1,11 @@
 <template>
-  <h3 class="titulo my-5">¿Que desea realizar?</h3>
+  <h3 class="title my-5">¿Que desea realizar?</h3>
   <Adminheader class="mb-5"/>
   <RouterView></RouterView>
 </template>
 
 <style>
-.titulo{
+.title{
   font-size: 40px;
   color: #EFF0F8;
   text-align: center;

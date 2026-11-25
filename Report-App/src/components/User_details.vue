@@ -64,12 +64,12 @@ function resetForm() {
   <div
     v-if="mostrarFormulario"
     class="overlay"
-    @click.self="mostrarFormulario = false"
+    @click.self="mostrarFormulario = false, changestate()"
   >
     <div class="form-container modal-form" style="--bs-rows: 6">
       <section id="Detalles">
         <div class="form-hearder d-flex justify-items-between">
-        <h3 class="mb-2">Detalles</h3>
+        <h3 class="mb-2">Detalles del usuario</h3>
       </div>
 
       <form class="row g-3" form @submit.prevent="guardarform">

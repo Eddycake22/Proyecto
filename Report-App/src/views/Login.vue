@@ -1,5 +1,11 @@
 <script setup>
 import { RouterLink} from 'vue-router';
+import {ref} from "vue";
+
+const user = ref ({
+    name: "",
+    password:""
+});
 </script>
 
 <template>
@@ -9,11 +15,11 @@ import { RouterLink} from 'vue-router';
         <form @submit.prevent="handleLogin" class="formulario">
         <div class="form-group mt-3">
             <label for="username">Usuario o correo electrónico:</label>
-            <input type="text" id="username" v-model="username" required placeholder="Escribir..." />
+            <input type="text" id="username" v-model="user.name" required placeholder="Escribir..." />
         </div>
         <div class="form-group my-2">    
             <label for="password">Contraseña:</label>
-            <input type="password" id="password" v-model="password" required placeholder="Escribir contraseña..."/>
+            <input type="password" id="password" v-model="user.password" required placeholder="Escribir contraseña..."/>
         </div>
         </form>
         <RouterLink class="btn btn-light my-3" to="/inicio">Iniciar Sesión</RouterLink>  

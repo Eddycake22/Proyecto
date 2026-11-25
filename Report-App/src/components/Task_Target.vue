@@ -8,7 +8,7 @@
     id="details-btn"
     type="button"
     @click="mostrarFormulario = true"
-    style="grid-row:2!important; grid-column:2!important;"  
+    style="grid-row:3; grid-column:2;"  
     >
     Detalles
     </button>
@@ -24,8 +24,8 @@
 </template>
 
 <style scoped>
-.btn.btn-secondary{
-    grid-column-start: 2!important;
+#detaiils-btn{
+    grid-column-start: 2;
 }
 .act-task {
     display: grid;

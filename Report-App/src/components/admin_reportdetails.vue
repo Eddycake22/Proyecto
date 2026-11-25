@@ -82,6 +82,7 @@ function resetForm() {
             class="form-select"
             aria-label="Default select example"
             v-model="formdefault.tec"
+            :disabled="!editar"
           >
             <option value="#">Seleccionar...</option>
             <option value="1">Técnico 1</option>
